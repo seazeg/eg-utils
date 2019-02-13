@@ -1,0 +1,16 @@
+{
+  "name": "gtools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "GTools.js",
+  "scripts": {
+    "dev": "tsc GTools.ts --outDir ./dist/npm;gulp jsmin"
+  },
+  "author": "Evan.G",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify": "^3.0.1"
+  }
+}
