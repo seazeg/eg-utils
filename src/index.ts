@@ -6,10 +6,13 @@ import {ArrayMod} from './module/array'
 import {OtherMod} from './module/other'
 
 /**
- * @description 入口main函数
+ * @description 入口主函数
  * @class Core
  */
-class Main{
+class GTools{
+    static init(){
+        return (new this).merge()
+    }
     constructor(public options:{[key:string]:any} = {}){
         this.options = options
     }
@@ -23,9 +26,8 @@ class Main{
             target=target.concat(source);
         }
         return target;
-
     }
-    private init(){
+    private merge(){
        let modules: {[key:string]:any}={
             'BaseMod':BaseMod,
             'StringMod':StringMod,
@@ -41,7 +43,10 @@ class Main{
        return res;
     }
 }
-interface Global extends Window {
-    GTools: any
-}
-(<Global>window).GTools = new Main();
+
+// interface Global extends Window {
+//     GTools: any
+// }
+// (<Global>window).GTools = GTools.init();
+
+
