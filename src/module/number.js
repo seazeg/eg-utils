@@ -1,38 +1,37 @@
-import {BaseMod} from './base'
-
-class modules extends BaseMod{
+'use strict'
+module.exports ={
     /**
      * @description 生成指定位数的随机数
      * @param {number} placeRange 位数
      * @param {string} returnType
      * @returns {number}
      */
-    public getPlaceRandomNum(placeRange: number, returnType: string): number {
+    getPlaceRandomNum: function (placeRange, returnType) {
         return returnType == "float" ? Math.random() * placeRange : Math.ceil(Math.random() * placeRange);
-    }
+    },
     /**
      * @description 生成指定范围的随机数
      * @param {number} min 最小值
      * @param {number} max 最大值
      * @returns {number}
      */
-    public getRangeRandomNum(min: number, max: number): number {
-        return Math.floor(min + Math.random() * ((max + 1) - min))
-    }
+    getRangeRandomNum: function (min, max) {
+        return Math.floor(min + Math.random() * ((max + 1) - min));
+    },
     /**
      * @description 格式化成货币格式
      * @param {string} value
      * @returns {string}
      */
-    public getFormatCurrency(value: string): string {
+    getFormatCurrency: function (value) {
         return value.split('').reverse().join('').replace(/(\d{3}(?=\d)(?!\d+\.|$))/g, '$1,').split('').reverse().join('');
-    }
+    },
     /**
      * @description 转换成大写货币格式
      * @param {*} value 货币金额
      * @returns {string}
      */
-    public changeToChnCurrency(value: any): string {
+    changeToChnCurrency: function (value) {
         if (typeof value == 'number') {
             value = new String(value);
         };
@@ -43,15 +42,15 @@ class modules extends BaseMod{
             return "";
         };
         //字符处理完毕后开始转换
-        let part: Array < string > = String(value).split(".");
+        let part = String(value).split(".");
         let newchar = "";
         //小数点前进行转化
         for (let i = part[0].length - 1; i >= 0; i--) {
             if (part[0].length > 10) {
                 return "";
             }
-            let tempchar = ""
-            let oldchar: any = part[0].charAt(i);
+            let tempchar = "";
+            let oldchar = part[0].charAt(i);
             switch (oldchar) {
                 case "0":
                     tempchar = "零" + tempchar;
@@ -89,25 +88,31 @@ class modules extends BaseMod{
                     tempchar = tempchar + "元";
                     break;
                 case 1:
-                    if (oldchar != 0) tempchar = tempchar + "拾";
+                    if (oldchar != 0)
+                        tempchar = tempchar + "拾";
                     break;
                 case 2:
-                    if (oldchar != 0) tempchar = tempchar + "佰";
+                    if (oldchar != 0)
+                        tempchar = tempchar + "佰";
                     break;
                 case 3:
-                    if (oldchar != 0) tempchar = tempchar + "仟";
+                    if (oldchar != 0)
+                        tempchar = tempchar + "仟";
                     break;
                 case 4:
                     tempchar = tempchar + "万";
                     break;
                 case 5:
-                    if (oldchar != 0) tempchar = tempchar + "拾";
+                    if (oldchar != 0)
+                        tempchar = tempchar + "拾";
                     break;
                 case 6:
-                    if (oldchar != 0) tempchar = tempchar + "佰";
+                    if (oldchar != 0)
+                        tempchar = tempchar + "佰";
                     break;
                 case 7:
-                    if (oldchar != 0) tempchar = tempchar + "仟";
+                    if (oldchar != 0)
+                        tempchar = tempchar + "仟";
                     break;
                 case 8:
                     tempchar = tempchar + "亿";
@@ -122,11 +127,11 @@ class modules extends BaseMod{
         if (value.indexOf(".") != -1) {
             if (part[1].length > 2) {
                 //保留两位小数
-                part[1] = part[1].substr(0, 2)
+                part[1] = part[1].substr(0, 2);
             }
             for (let i = 0; i < part[1].length; i++) {
-                let tempchar = ""
-                let perchar = part[1].charAt(i)
+                let tempchar = "";
+                let perchar = part[1].charAt(i);
                 switch (perchar) {
                     case "0":
                         tempchar = "零" + tempchar;
@@ -159,8 +164,10 @@ class modules extends BaseMod{
                         tempchar = "玖" + tempchar;
                         break;
                 }
-                if (i == 0) tempchar = tempchar + "角";
-                if (i == 1) tempchar = tempchar + "分";
+                if (i == 0)
+                    tempchar = tempchar + "角";
+                if (i == 1)
+                    tempchar = tempchar + "分";
                 newchar = newchar + tempchar;
             }
         }
@@ -169,12 +176,8 @@ class modules extends BaseMod{
             newchar = newchar.replace("零零", "零").replace("零亿", "亿").replace("亿万", "亿").replace("零万", "万").replace("零元", "元").replace("零角", "").replace("零分", "");
         }
         if (newchar.charAt(newchar.length - 1) == "元") {
-            newchar = newchar + "整"
+            newchar = newchar + "整";
         }
         return newchar;
     }
-}
-
-export {
-    modules as NumberMod
 }

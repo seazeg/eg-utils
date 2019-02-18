@@ -1,12 +1,13 @@
-class modules {
+'use strict'
+module.exports ={
     /**
      * @description 去字符串空格
      * @param {string} str 字符串
      * @param {number} type 1-所有空格  2-前后空格  3-前空格 4-后空格
      * @returns {string}
      */
-    public trim(str: string, type: number): string {
-        type = type || 1
+    trim: function (str, type) {
+        type = type || 1;
         switch (type) {
             case 1:
                 return str.replace(/\s+/g, "");
@@ -19,7 +20,7 @@ class modules {
             default:
                 return str;
         }
-    }
+    },
     /**
      * @description 替换字符串中所有指定字符
      * @param {string} str 内容
@@ -27,9 +28,9 @@ class modules {
      * @param {string} afterStr 替换成的字符
      * @returns {(string)}
      */
-    public replaceAll(str: string, beforeStr: string, afterStr: string): string {
+    replaceAll: function (str, beforeStr, afterStr) {
         return str.replace(new RegExp(beforeStr, 'gm'), afterStr);
-    }
+    },
     /**
      * @description 替换被截取字符串
      * @param {string} str 内容
@@ -39,21 +40,17 @@ class modules {
      * @param {string} afterStr 替换成的字符
      * @returns {(string)}
      */
-    public replaceSubString(options: {
-        [key: string]: any;
-    }): string {
+    replaceSubString: function (options) {
         let temp = options.str.substring(options.subStart, options.subEnd);
-        return temp.replace(options.beforeStr, options.afterStr)
-    }
+        return temp.replace(options.beforeStr, options.afterStr);
+    },
     /**
      * @description 过滤html操作符
-     * @param {string} value 
+     * @param {string} value
      * @returns {string}
      */
-    public filterHtmlCode(str: string): string {
-        const temp: {
-            [key: string]: string;
-        } = {
+    filterHtmlCode: function (str) {
+        let temp = {
             '<': '&lt;',
             '>': '&gt',
             '&': '&amp;',
@@ -63,12 +60,8 @@ class modules {
             '"': '&quot;',
             '\'': "&#39;"
         };
-        return str.replace(/[<>&|() '"]/g, function (chr: string) {
+        return str.replace(/[<>&|() '"]/g, function (chr) {
             return temp[chr];
         });
-    }
-}
-
-export {
-    modules as StringMod
+    },
 }
