@@ -1,5 +1,6 @@
 'use strict'
-module.exports = {
+const baseMethods = require('./base')
+const dateMethods = {
     /**
      * @description 格式化日期
      * @param {any} date 时间戳或日期
@@ -79,7 +80,7 @@ module.exports = {
         let temp = new Date(date);
         let year = temp.getFullYear();
         let month = temp.getMonth();
-        return [31, null, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month] || (_super.prototype.isLeapYear.call(this, year) ? 29 : 28);
+        return [31, null, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month] || (baseMethods.isLeapYear(year) ? 29 : 28);
     },
     /**
      * @description 获取某年某天是第几周
@@ -106,3 +107,4 @@ module.exports = {
     }
 }
 
+module.exports = dateMethods

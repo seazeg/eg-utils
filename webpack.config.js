@@ -3,7 +3,7 @@ const path = require('path');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: './src/index.js',
   devtool: 'inline-source-map',
   module: {
     rules: [{
@@ -16,9 +16,9 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js']
   },
   output: {
-    filename: 'GTools.js',
+    filename: 'egUtils.js',
     path: path.resolve(__dirname, 'dist'),
-    library: "GTools",
+    library: "egUtils",
     libraryTarget: "umd"
   },
   optimization: {

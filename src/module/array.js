@@ -1,5 +1,5 @@
 'use strict'
-module.exports = {
+const arrayMethods = {
     /**
      * @description 数组元素去重
      * @param {Array < any >} arr
@@ -124,3 +124,5 @@ module.exports = {
         return JSON.parse(JSON.stringify(o));
     }
 }
+
+module.exports = arrayMethods

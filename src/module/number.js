@@ -1,5 +1,5 @@
 'use strict'
-module.exports ={
+const numberMethods ={
     /**
      * @description 生成指定位数的随机数
      * @param {number} placeRange 位数
@@ -181,3 +181,5 @@ module.exports ={
         return newchar;
     }
 }
+
+module.exports = numberMethods

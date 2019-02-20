@@ -1,5 +1,5 @@
 'use strict'
-module.exports = {
+const otherMethods = {
     /**
      * @description html转成字符串
      * @param {*} htmlDOM htmlDOM
@@ -96,5 +96,31 @@ module.exports = {
         url = img.src; // 此时相对路径已经变成绝对路径
         img.src = ''; // 取消请求
         return url;
+    },
+    /**
+     * @description 校验密码强度(通用)
+     * @param {*} str 字符串
+     * @returns {number}
+     */
+    checkPwd: function (str) {
+        var level = 0;
+        if (str.length < 6) {
+            return level;
+        }
+        if (/[0-9]/.test(str)) {
+            level++;
+        }
+        if (/[a-z]/.test(str)) {
+            level++;
+        }
+        if (/[A-Z]/.test(str)) {
+            level++;
+        }
+        if (/[\.|-|_]/.test(str)) {
+            level++;
+        }
+        return level;
     }
 }
+
+module.exports = otherMethods

@@ -1,18 +1,21 @@
 'use strict'
-const modules = require('./module/');
+const allModules = require('./module');
 
 let egUtils = (function () {
     let egUtils = function (options) {
-        return new egUtils.fn.init(options).modules;
+        return new egUtils.fn.init(options).allModules;
     }
 
     egUtils.fn = egUtils.prototype = {
         constructor: egUtils,
         init: function (options) {
             this.options = options;
-            this.modules = modules;
+            this.allModules = allModules;
         }
     }
     egUtils.fn.init.prototype = egUtils.fn;
     return egUtils;
 })();
+
+module.exports = new egUtils()
+

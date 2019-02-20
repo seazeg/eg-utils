@@ -7,7 +7,6 @@ const dateModule = require('./date');
 const otherModule = require('./other');
 
 let modules = {};
-
 Object.assign(
     modules,
     baseModule,
@@ -17,5 +16,4 @@ Object.assign(
     dateModule,
     otherModule
 )
-console.log(modules.length);
 module.exports = modules;

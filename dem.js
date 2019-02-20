@@ -1,8 +1,7 @@
-var {GTools} = require('./dist/GTools')
-// import {GTools} from './dist/GTools'
-// var isString = new gt.Main.init().isString
+// import egu from './src/index'
+// var egu = require('./dist/GTools')
+var egu = require('./src/index')
 
-console.log(GTools.init());
+// var a = require('./src/module/array')
 
-
-console.log(process.env.NODE_ENV);
+console.log(egu.isVerify('123131','html'));
