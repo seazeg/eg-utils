@@ -66,9 +66,9 @@ declare class modules {
     mergeJSON(a: any, b: any): Object;
     /**
      * @description 深拷贝数组或对象
-     * @param {(object | Array < any >)} o 数组或对象
+     * @param {(object | Array < any >)} obj 数组或对象
      * @returns {(object | Array < any >)}
      */
-    deepCopy(o: object | Array<any>): object | Array<any>;
+    deepCopy(obj: object | Array<any>): object | Array<any>;
 }
 export { modules as ArrayMod };

@@ -6,13 +6,13 @@ declare class Modules {
      */
     isString(value: any): Boolean;
     /**
-     * @description 判断字符串类型
+     * @description 判断数字类型
      * @param {*} value
      * @returns {Boolean}
      */
     isNumber(value: any): Boolean;
     /**
-     * @description 判断string类型
+     * @description 判断布尔类型
      * @param {*} value
      * @returns {Boolean}
      */
@@ -40,7 +40,7 @@ declare class Modules {
      * @param {*} value
      * @returns {Boolean}
      */
-    isObj(value: any): Boolean;
+    isObject(value: any): Boolean;
     /**
      * @description 判断array类型
      * @param {*} value
@@ -117,7 +117,7 @@ declare class Modules {
      */
     isHtml(value: any): boolean;
     /**
-     * @description 校验身份证信息
+     * @description 判断校验身份证信息
      * @param {*} value
      * @returns {boolean}
      */

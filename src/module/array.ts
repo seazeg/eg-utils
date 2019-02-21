@@ -116,11 +116,11 @@ class modules {
   }
   /**
    * @description 深拷贝数组或对象
-   * @param {(object | Array < any >)} o 数组或对象
+   * @param {(object | Array < any >)} obj 数组或对象
    * @returns {(object | Array < any >)}
    */
-  public deepCopy(o: object | Array < any > ): object | Array < any > {
-    return JSON.parse(JSON.stringify(o))
+  public deepCopy(obj: object | Array < any > ): object | Array < any > {
+    return JSON.parse(JSON.stringify(obj))
   }
 }
 

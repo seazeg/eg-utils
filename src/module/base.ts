@@ -8,7 +8,7 @@ class Modules {
         return Object.prototype.toString.call(value).slice(8, -1) === 'String'
     }
     /**
-     * @description 判断字符串类型
+     * @description 判断数字类型
      * @param {*} value
      * @returns {Boolean}
      */
@@ -16,7 +16,7 @@ class Modules {
         return Object.prototype.toString.call(value).slice(8, -1) === 'Number'
     }
     /**
-     * @description 判断string类型
+     * @description 判断布尔类型
      * @param {*} value
      * @returns {Boolean}
      */
@@ -52,7 +52,7 @@ class Modules {
      * @param {*} value
      * @returns {Boolean}
      */
-    public isObj(value: any): Boolean {
+    public isObject(value: any): Boolean {
         return Object.prototype.toString.call(value).slice(8, -1) === 'Object'
     }
     /**
@@ -169,7 +169,7 @@ class Modules {
         return /<("[^"]*"|'[^']*'|[^'">])*>/.test(value);
     }
     /**
-     * @description 校验身份证信息
+     * @description 判断校验身份证信息
      * @param {*} value
      * @returns {boolean}
      */

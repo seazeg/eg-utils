@@ -1,7 +1,7 @@
 import { BaseMod } from './base';
 declare class modules extends BaseMod {
     /**
-     * @description 去字符串空格
+     * @description 去除字符串空格
      * @param {string} str 字符串
      * @param {number} type 1-所有空格  2-前后空格  3-前空格 4-后空格
      * @returns {string}
