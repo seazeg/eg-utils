@@ -1,1 +1,2 @@
-export declare let egUtils: {};
+declare const _default: {};
+export = _default;

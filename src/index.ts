@@ -50,4 +50,4 @@ class Center {
     }
 }
 
-export let egUtils = (new Center())._init();
+export = (new Center())._init();

@@ -12,3 +12,4 @@ _*
 package-lock.json
 tsconfig.json
 webpack.config.js
+demo.*

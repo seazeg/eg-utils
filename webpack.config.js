@@ -16,10 +16,10 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js']
   },
   output: {
-    filename: 'egUtils.js',
+    filename: 'eg-utils.js',
     path: path.resolve(__dirname, 'dist'),
     library: "egUtils",
-    libraryTarget: "umd"
+    libraryTarget: "window"
   },
   optimization: {
     minimizer: [
@@ -29,6 +29,6 @@ module.exports = {
         sourceMap: false
       }),
     ],
-    minimize:false
+    // minimize:false
   }
 };
