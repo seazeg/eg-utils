@@ -52,5 +52,17 @@ declare class modules extends BaseMod {
      * @returns {string} bbbssss => 3b4s
      */
     compressRepeatedStr(str: string, ignoreCase: boolean): string;
+    /**
+     * @description 中文转Unicode码
+     * @param {string} str
+     * @returns {string}
+     */
+    toUnicode(str: string): string;
+    /**
+     * @description Unicode码转中文
+     * @param {string} str
+     * @returns {string}
+     */
+    toGB2312(str: any): string;
 }
 export { modules as StringMod };

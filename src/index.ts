@@ -26,7 +26,7 @@ class Center {
         if (Object.prototype.toString.call(target) === '[object Object]' && Object.prototype.toString.call(source) === '[object Object]') {
             for (var key in source) {
                 target[key] = target[key] && target[key].toString() === "[object Object]" ?
-                    this._extend(target[key], source[key]) : target[key] = source[key];
+                    this._extend(target[key],source[key]) : target[key] = source[key];
             }
         }
         return target;

@@ -1,5 +1,7 @@
-import {BaseMod} from './base'
-class modules extends BaseMod{
+import {
+    BaseMod
+} from './base'
+class modules extends BaseMod {
     /**
      * @description 去除字符串空格
      * @param {string} str 字符串
@@ -74,7 +76,7 @@ class modules extends BaseMod{
      * @param {string} str
      * @returns {string}
      */
-    public fristCharUpperCase(str:string):string {
+    public fristCharUpperCase(str: string): string {
         if (!super.isEmpty(str)) {
             return str.replace(/^[a-z]/, function (chr) {
                 return chr.toLocaleUpperCase();
@@ -88,7 +90,7 @@ class modules extends BaseMod{
      * @param {string} str
      * @returns {string}
      */
-    public fristCharLowerCase(str:string):string {
+    public fristCharLowerCase(str: string): string {
         if (!super.isEmpty(str)) {
             return str.replace(/^[A-Z]/, function (chr) {
                 return chr.toLocaleLowerCase();
@@ -103,11 +105,36 @@ class modules extends BaseMod{
      * @param {boolean} 是否区分大小写
      * @returns {string} bbbssss => 3b4s
      */
-    public compressRepeatedStr(str:string, ignoreCase:boolean) {
+    public compressRepeatedStr(str: string, ignoreCase: boolean):string {
         let regex = new RegExp("([a-z])\\1+", ignoreCase ? "gi" : "g");
         return str.replace(regex, function (str, group) {
             return str.length + group;
         });
+    }
+    /**
+     * @description 中文转Unicode码
+     * @param {string} str
+     * @returns {string}
+     */
+    public toUnicode(str: string):string {
+        if (!super.isEmpty(str)) {
+            return escape(str).toLocaleLowerCase().replace(/%u/gi, '\\u');
+        } else {
+            return str;
+        }
+
+    }
+    /**
+     * @description Unicode码转中文
+     * @param {string} str
+     * @returns {string}
+     */
+    public toGB2312(str: any):string {
+        if (!super.isEmpty(str)) {
+            return unescape(str.replace(/\\u/gi, '%u'));
+        } else {
+            return str;
+        }
     }
 }
 

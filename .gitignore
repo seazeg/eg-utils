@@ -9,7 +9,6 @@ thumbs.db
 .vscode/*
 .vscode
 _*
-package-lock.json
 tsconfig.json
 webpack.config.js
 demo.*

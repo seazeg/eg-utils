@@ -1,4 +1,4 @@
-# javascript 常用工具类库
+# Javascript 常用工具类库
 
 [![npm version](https://img.shields.io/npm/v/eg-utils.svg?style=flat-square)](https://www.npmjs.org/package/eg-utils)
 [![npm license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/xuliangzhan/xe-utils/blob/master/LICENSE)
@@ -42,6 +42,7 @@ import egUtils from 'eg-utils'
 ## API 
 
 * *基础判断函数*
+
   * [isString (value) 判断字符串类型]()
   * [isNumber (value) 判断数字类型]()
   * [isBoolean (value) 判断布尔类型]() 
@@ -66,6 +67,7 @@ import egUtils from 'eg-utils'
   * [isVerify (value,type) 字符串综合校验]()
   * ...
 * *字符串操作函数*
+
   * [trim (str,type) 去除字符串空格]()
   * [replaceAll (str, beforeStr, afterStr) 替换字符串中所有指定字符]()
   * [replaceSubString (options) 替换被截取字符串]()
@@ -73,14 +75,18 @@ import egUtils from 'eg-utils'
   * [fristCharUpperCase (str) 首字母小写]()
   * [fristCharLowerCase (str) 首字母小写]()
   * [compressRepeatedStr (str, ignoreCase) 压缩相同且连续的字符]()
+  * [toUnicode (str) 中文转Unicode码]()
+  * [toGB2312 (str) Unicode码转中文]()
   * ...
 * *数字操作函数*
+
   * [getPlaceRandomNum (placeRange, returnType) 生成指定位数的随机数]()
   * [getRangeRandomNum (min, max) 生成指定范围的随机数]()
   * [getFormatCurrency (value) 格式化成货币格式]()
   * [changeToChnCurrency (value) 转换成大写货币格式]()
   * ...
 * *数组对象操作函数*
+
   * [arrUnique (arr) 数组元素去重]()
   * [arrSort (arr,type) 数组元素排序]()
   * [arrRemove (arr, ele) 删除指定的数组元素]()
@@ -94,6 +100,7 @@ import egUtils from 'eg-utils'
   * [deepCopy (obj) 深拷贝数组或对象]()
   * ...
 * *日期操作函数*
+
   * [formatDate (date,type) 判断字符串类型]()
   * [formatTime (time) 判断字符串类型]()
   * [getDayMinus (startDate,endDate) 判断字符串类型]()
@@ -102,6 +109,7 @@ import egUtils from 'eg-utils'
   * [getWhichWeek (date) 判断字符串类型]()
   * ...
 * *其他操作函数*
+
   * [htmlToStirng (htmlDOM) html转成字符串]()
   * [stringToHtml (htmlString) 字符串转html]()
   * [getQueryParam (param) 获取url中指定参数值]()
