@@ -1,9 +1,9 @@
 declare class modules {
     /**
-         * @description 数组元素去重
-         * @param {Array < any >} arr
-         * @returns {Array < any >}
-         */
+     * @description 数组元素去重
+     * @param {Array < any >} arr
+     * @returns {Array < any >}
+     */
     arrUnique(arr: Array<any>): Array<any>;
     /**
      * @description 数组元素排序

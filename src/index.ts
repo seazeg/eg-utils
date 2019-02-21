@@ -28,12 +28,10 @@ class Center {
                 target[key] = target[key] && target[key].toString() === "[object Object]" ?
                     this._extend(target[key], source[key]) : target[key] = source[key];
             }
-        } else if (Object.prototype.toString.call(target) === '[object Array]' && Object.prototype.toString.call(source) === '[object Array]') {
-            target = target.concat(source);
         }
         return target;
     }
-    init() {
+    _init() {
         let modules: {
             [key: string]: any
         } = {
@@ -52,4 +50,4 @@ class Center {
     }
 }
 
-export let egUtils = (new Center()).init();
+export let egUtils = (new Center())._init();

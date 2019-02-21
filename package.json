@@ -1,7 +1,7 @@
 {
-  "name": "egutils",
-  "version": "1.0.0",
-  "description": "egutils",
+  "name": "eg-utils",
+  "version": "1.0.5",
+  "description": "eg-utils",
   "main": "index.js",
   "scripts": {
     "start": "webpack --config webpack.config.js",

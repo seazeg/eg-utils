@@ -11,3 +11,4 @@ thumbs.db
 _*
 package-lock.json
 tsconfig.json
+webpack.config.js
