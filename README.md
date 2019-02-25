@@ -66,6 +66,7 @@ import egUtils from 'eg-utils'
   * [isCardID (value) 判断校验身份证信息]()
   * [isVerify (value,type) 字符串综合校验]()
   * ...
+  
 * *字符串操作函数*
 
   * [trim (str,type) 去除字符串空格]()
@@ -78,6 +79,7 @@ import egUtils from 'eg-utils'
   * [toUnicode (str) 中文转Unicode码]()
   * [toGB2312 (str) Unicode码转中文]()
   * ...
+
 * *数字操作函数*
 
   * [getPlaceRandomNum (placeRange, returnType) 生成指定位数的随机数]()
@@ -85,6 +87,7 @@ import egUtils from 'eg-utils'
   * [getFormatCurrency (value) 格式化成货币格式]()
   * [changeToChnCurrency (value) 转换成大写货币格式]()
   * ...
+
 * *数组对象操作函数*
 
   * [arrUnique (arr) 数组元素去重]()
@@ -99,6 +102,7 @@ import egUtils from 'eg-utils'
   * [mergeJSON (a,b) 合并两个对象]()
   * [deepCopy (obj) 深拷贝数组或对象]()
   * ...
+
 * *日期操作函数*
 
   * [formatDate (date,type) 判断字符串类型]()
@@ -108,6 +112,7 @@ import egUtils from 'eg-utils'
   * [getMonthDays (date) 判断字符串类型]()
   * [getWhichWeek (date) 判断字符串类型]()
   * ...
+
 * *其他操作函数*
 
   * [htmlToStirng (htmlDOM) html转成字符串]()
@@ -117,6 +122,8 @@ import egUtils from 'eg-utils'
   * [getBrowserType () 获取当前浏览器版本]()
   * [relativePathToFullPath (url) 获取相对路径的绝对路径]()
   * [checkPwd (str) 校验密码强度(通用)]()
+  * [HEXToRGB (str) 颜色16进制转RGB]()
+  * [RGBToHEX (str) 颜色RGB转16进制]()
   * ...
 
 ## License

@@ -81,9 +81,9 @@ class modules {
      */
     public relativePathToFullPath(url: string): string {
         let img = new Image();
-        img.src = url; // 设置相对路径给image, 此时会发送出请求
-        url = img.src; // 此时相对路径已经变成绝对路径
-        img.src = ''; // 取消请求
+        img.src = url;
+        url = img.src;
+        img.src = '';
         return url;
     };
     /**
@@ -109,6 +109,70 @@ class modules {
             level++;
         }
         return level;
+    }
+    /**
+     * @description 颜色16进制转RGB
+     * @param {string} str #000000
+     * @returns {string} RGB(0,0,0)
+     */
+    public HEXToRGB(str: string): string {
+        let reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
+        str = str.toLowerCase();
+        if (str && reg.test(str)) {
+            if (str.length === 4) {
+                var temp = "#";
+                for (var i = 1; i < 4; i += 1) {
+                    temp += str.slice(i, i + 1).concat(str.slice(i, i + 1));
+                }
+                str = temp;
+            }
+            //处理六位的颜色值
+            let sColorChange = [];
+            for (var i = 1; i < 7; i += 2) {
+                sColorChange.push(parseInt("0x" + str.slice(i, i + 2)));
+            }
+            return "RGB(" + sColorChange.join(",") + ")";
+        } else {
+            return str;
+        }
+    }
+    /**
+     * @description 颜色RGB转16进制
+     * @param {string} str RGB(0,0,0)
+     * @returns {string} #000000
+     */
+    public RGBToHEX(str: string): string {
+        let reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
+        let result = '';
+        if (/^(rgb|RGB)/.test(str)) {
+            let aColor = str.replace(/(?:\(|\)|rgb|RGB)*/g, "").split(",");
+            let strHex = "#";
+            for (let i = 0; i < aColor.length; i++) {
+                let hex = Number(aColor[i]).toString(16);
+                if (hex === "0") {
+                    hex += hex;
+                }
+                strHex += hex;
+            }
+            if (strHex.length !== 7) {
+                strHex = str;
+            }
+            result = strHex;
+        } else if (reg.test(str)) {
+            let aNum = str.replace(/#/, "").split("");
+            if (aNum.length === 6) {
+                return str;
+            } else if (aNum.length === 3) {
+                let numHex = "#";
+                for (let i = 0; i < aNum.length; i += 1) {
+                    numHex += (aNum[i] + aNum[i]);
+                }
+                result = numHex;
+            }
+        } else {
+            result = str;
+        }
+        return result;
     }
 }
 
