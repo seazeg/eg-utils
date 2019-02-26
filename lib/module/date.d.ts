@@ -38,5 +38,12 @@ declare class modules extends BaseMod {
      * @returns {number}
      */
     getWhichWeek(date: any): number;
+    /**
+     * @description 获取某日期前后若干天数的日期
+     * @param {*} date
+     * @param {number} minusDays
+     * @returns {string}
+     */
+    getDateMinusDaysDate(date: any, minusDays: number): string;
 }
 export { modules as DateMod };

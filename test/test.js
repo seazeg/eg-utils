@@ -160,6 +160,12 @@ test('getMonthDays:', () => {
 test('getWhichWeek:', () => {
     expect(egUtils.getWhichWeek('2019-2-26')).toBe(8);
 });
+test('getDateMinusDaysDate:', () => {
+    expect(egUtils.getDateMinusDaysDate('2018-12-3',158)).toBe('2019-5-10');
+    expect(egUtils.getDateMinusDaysDate('2018-12-3',-11)).toBe('2018-11-22');
+});
+
+
 
 //other
 test('checkPwd:', () => {

@@ -1,4 +1,6 @@
-import {BaseMod} from './base'
+import {
+    BaseMod
+} from './base'
 
 class modules extends BaseMod {
     /**
@@ -107,6 +109,20 @@ class modules extends BaseMod {
             week = Math.ceil(days / 7) + 1;
         }
         return week;
+    }
+    /**
+     * @description 获取某日期前后若干天数的日期
+     * @param {*} date
+     * @param {number} minusDays
+     * @returns {string}
+     */
+    public getDateMinusDaysDate(date: any, minusDays: number): string {
+        let temp = new Date(date);
+        temp.setDate(Number(new Date(date).getDate()) + minusDays); //获取AddDayCount天后的日期
+        let y = temp.getFullYear();
+        let m = temp.getMonth() + 1; //获取当前月份的日期
+        let d = temp.getDate();
+        return y + "-" + m + "-" + d;
     }
 }
 

@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack --config webpack.config.js",
     "dev": "webpack --config webpack.config.js;npx webpack-dev-server --mode development --content-base ./dist",
-    "test": "jest"
+    "test": "jest",
+    "push": "npm start;npm publish"
   },
   "author": {
     "name": "Evan.G",

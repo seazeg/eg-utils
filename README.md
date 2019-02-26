@@ -105,12 +105,13 @@ import egUtils from 'eg-utils'
 
 * *日期操作函数*
 
-  * [formatDate (date,type) 判断字符串类型]()
-  * [formatTime (time) 判断字符串类型]()
-  * [getDayMinus (startDate,endDate) 判断字符串类型]()
-  * [getYearDays (year) 判断字符串类型]()
-  * [getMonthDays (date) 判断字符串类型]()
-  * [getWhichWeek (date) 判断字符串类型]()
+  * [formatDate (date,type) 格式化日期]()
+  * [formatTime (time) 格式化时分秒]()
+  * [getDayMinus (startDate,endDate) 获取两个日期间差值]()
+  * [getYearDays (year) 获取某年有多少天]()
+  * [getMonthDays (date) 获取某年某月有多少天]()
+  * [getWhichWeek (date) 获取某年某天是第几周]()
+  * [getDateMinusDaysDate (date,minusDays) 获取某日期前后若干天数的日期]() 
   * ...
 
 * *其他操作函数*
