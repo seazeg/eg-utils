@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack --config webpack.config.js",
-    "dev": "webpack --config webpack.config.js;npx webpack-dev-server --mode development --content-base ./dist"
+    "dev": "webpack --config webpack.config.js;npx webpack-dev-server --mode development --content-base ./dist",
+    "test": "jest"
   },
   "author": {
     "name": "Evan.G",

@@ -223,13 +223,13 @@ class Modules {
             case 'upper':
                 return /^[A-Z]+$/.test(value);
             case 'phone':
-                return /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\\d{8}$/.test(value);
+                return /^1[3|4|5|7|8][0-9]{9}$/.test(value);
             case 'tel':
-                return /^(0\d{2,3}-\d{7,8})(-\d{1,4})?$/.test(value);
+                return /^0\d{2,3}-\d{7,8}(-\d{1,6})?$/.test(value);
             case 'url':
                 return /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/.test(value);
             case 'ip':
-                return /((?:(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d)\\.){3}(?:25[0-5]|2[0-4]\\d|[01]?\\d?\\d))/.test(value);
+                return /([0-9]{1,3}\.{1}){3}[0-9]{1,3}/.test(value);
             case 'date':
                 return /^(\d{4})\-(\d{2})\-(\d{2}) (\d{2})(?:\:\d{2}|:(\d{2}):(\d{2}))$/.test(value) || /^(\d{4})\-(\d{2})\-(\d{2})$/.test(value);
             case 'email':
