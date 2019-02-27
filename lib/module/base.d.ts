@@ -96,6 +96,18 @@ declare class Modules {
      */
     isEmptyObject(value: any): Boolean;
     /**
+     * @description 判断是否是整数
+     * @param {*} value
+     * @returns {boolean}
+     */
+    isInteger(value: any): boolean;
+    /**
+     * @description 判断是否是小数
+     * @param {*} value
+     * @returns {boolean}
+     */
+    isFloat(value: any): boolean;
+    /**
      * @description 判断是否为ios
      * @returns {Boolean}
      */
@@ -110,6 +122,11 @@ declare class Modules {
      * @returns {Boolean}
      */
     isPC(): Boolean;
+    /**
+     * @description 判断是否支持webp
+     * @returns {boolean}
+     */
+    isWebp(): boolean;
     /**
      * @description 判断是否为闰年
      * @param {*} value

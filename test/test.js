@@ -46,6 +46,12 @@ test('isSet:', () => {
 test('isEmpty:', () => {
     expect(egUtils.isEmpty('')).toBe(true);
 });
+test('isInteger:', () => {
+    expect(egUtils.isInteger(100)).toBe(true);
+});
+test('isFloat:', () => {
+    expect(egUtils.isFloat(3.14)).toBe(true);
+});
 test('isLeapYear:', () => {
     expect(egUtils.isLeapYear(1984)).toBe(true);
 });
@@ -102,10 +108,23 @@ test('arrAverage:', () => {
 test('arrEqual:', () => {
     expect(egUtils.arrEqual([1, 2, 3], [1, 2, 3])).toBe(true);
 });
-
-
+test('getObjectLen:', () => {
+    expect(egUtils.getObjectLen({a:1,b:2})).toBe(2);
+});
 
 //number
+test('numAdd:', () => {
+    expect(egUtils.numAdd(300,3.14)).toBe(303.14);
+});
+test('numSub:', () => {
+    expect(egUtils.numSub(300,3.14)).toBe(296.86);
+});
+test('numMul:', () => {
+    expect(egUtils.numMul(300,3.14)).toBe(942);
+});
+test('numDivi:', () => {
+    expect(egUtils.numDivi(300,2.5)).toBe(120);
+});
 test('getFormatCurrency:', () => {
     expect(egUtils.getFormatCurrency('10000')).toBe('10,000');
 });

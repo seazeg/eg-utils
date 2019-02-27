@@ -19,12 +19,12 @@ npm i eg-utils -S
 CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/eg-utils@1.0.61/dist/eg-utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/eg-utils@1.0.81/dist/eg-utils.js"></script>
 ```
 
 unpkg
 ```html
-<script src="https://unpkg.com/eg-utils@1.0.61/dist/eg-utils.js"></script>
+<script src="https://unpkg.com/eg-utils@1.0.81/dist/eg-utils.js"></script>
 ```
 
 nodejs
@@ -59,9 +59,12 @@ import egUtils from 'eg-utils'
   * [isSet (value) 判断set类型]()
   * [isEmpty (value) 判断是否为空]()
   * [isEmptyObject (value) 判断对象是否为空]()
+  * [isInteger (value) 判断是否是整数]()
+  * [isFloat (value) 判断是否是小数]()
   * [isIos () 判断是否为ios]()
   * [isAndroid () 判断是否为android]()
   * [isPC () 判断是否为pc]()
+  * [isWebp () 判断是否支持webp]()
   * [isLeapYear (value) 判断是否为闰年]()
   * [isHtml (value) 判断是否含有html标签]()
   * [isCardID (value) 判断校验身份证信息]()
@@ -83,6 +86,10 @@ import egUtils from 'eg-utils'
 
 * *数字操作函数* 
 
+  * [numAdd (num1, num2) 数字精确相加]()
+  * [numSub (num1, num2) 数字精确相减]()
+  * [numMul (num1, num2) 数字精确相乘]()
+  * [numDivi (num1, num2) 数字精确相除]()
   * [getPlaceRandomNum (placeRange, returnType) 生成指定位数的随机数]()
   * [getRangeRandomNum (min, max) 生成指定范围的随机数]()
   * [getFormatCurrency (value) 格式化成货币格式]()
@@ -101,6 +108,7 @@ import egUtils from 'eg-utils'
   * [arrSum (arr) 数组元素求和（number）]()
   * [arrAverage (arr) 数组元素平均值（number）]()
   * [arrEqual (arr) 数组元素平均值（number）]()
+  * [getObjectLen (obj) 获取对象长度]()
   * [mergeJSON (a,b) 合并两个对象]()
   * [deepCopy (obj) 深拷贝数组或对象]()
   * ...

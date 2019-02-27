@@ -99,7 +99,7 @@ class modules extends BaseMod {
             days = temp.getDate();
         let yearFirstDay = new Date(year, 0, 1).getDay() || 7;
         let week = null;
-        for (var m = 0; m < month; m++) {
+        for (let m = 0; m < month; m++) {
             days += this.getMonthDays(year + '-' + m);
         }
         if (yearFirstDay == 1) {

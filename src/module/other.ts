@@ -44,15 +44,15 @@ class modules {
         str = str.toLowerCase();
         if (str && reg.test(str)) {
             if (str.length === 4) {
-                var temp = "#";
-                for (var i = 1; i < 4; i += 1) {
+                let temp = "#";
+                for (let i = 1; i < 4; i += 1) {
                     temp += str.slice(i, i + 1).concat(str.slice(i, i + 1));
                 }
                 str = temp;
             }
             //处理六位的颜色值
             let sColorChange = [];
-            for (var i = 1; i < 7; i += 2) {
+            for (let i = 1; i < 7; i += 2) {
                 sColorChange.push(parseInt("0x" + str.slice(i, i + 2)));
             }
             return "RGB(" + sColorChange.join(",") + ")";

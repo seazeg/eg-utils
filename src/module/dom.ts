@@ -5,7 +5,7 @@ class modules {
      * @param {*} cls
      * @returns {boolean}
      */
-    public hasClass(ele:any, cls:any):boolean {
+    public hasClass(ele: any, cls: any): boolean {
         return (new RegExp('(\\s|^)' + cls + '(\\s|$)')).test(ele.className);
     }
     /**
@@ -13,7 +13,7 @@ class modules {
      * @param {*} ele
      * @param {*} cls
      */
-    public addClass(ele:any, cls:any):void {
+    public addClass(ele: any, cls: any): void {
         if (!this.hasClass(ele, cls)) {
             ele.className += ' ' + cls;
         }
@@ -23,7 +23,7 @@ class modules {
      * @param {*} ele
      * @param {*} cls
      */
-    public removeClass(ele:any, cls:any) {
+    public removeClass(ele: any, cls: any) {
         if (this.hasClass(ele, cls)) {
             ele.className = ele.className.replace(new RegExp('(\\s|^)' + cls + '(\\s|$)'), ' ');
         }

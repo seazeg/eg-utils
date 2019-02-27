@@ -1,6 +1,103 @@
-import {BaseMod} from './base'
+import {
+    BaseMod
+} from './base'
 
-class modules extends BaseMod{
+class modules extends BaseMod {
+    /**
+     * @description 数字精确相加
+     * @param {*} num1
+     * @param {*} num2
+     * @returns {number}
+     */
+    public numAdd(num1: any, num2: any): number {
+        let temp1, temp2, times, abs;
+        try {
+            temp1 = num1.toString().split(".")[1].length
+        } catch (e) {
+            temp1 = 0
+        }
+        try {
+            temp2 = num2.toString().split(".")[1].length
+        } catch (e) {
+            temp2 = 0
+        }
+        abs = Math.abs(temp1 - temp2);
+        times = Math.pow(10, Math.max(temp1, temp2))
+        if (abs > 0) {
+            let ctimes = Math.pow(10, abs);
+            if (temp1 > temp2) {
+                num1 = Number(num1.toString().replace(".", ""));
+                num2 = Number(num2.toString().replace(".", "")) * ctimes;
+            } else {
+                num1 = Number(num1.toString().replace(".", "")) * ctimes;
+                num2 = Number(num2.toString().replace(".", ""));
+            }
+        } else {
+            num1 = Number(num1.toString().replace(".", ""));
+            num2 = Number(num2.toString().replace(".", ""));
+        }
+        return (num1 + num2) / times
+    }
+    /**
+     * @description 数字精确相减
+     * @param {*} num1
+     * @param {*} num2
+     * @returns 
+     */
+    public numSub(num1: any, num2: any) {
+        let temp1, temp2, times, n;
+        try {
+            temp1 = num1.toString().split(".")[1].length;
+        } catch (e) {
+            temp1 = 0;
+        }
+        try {
+            temp2 = num2.toString().split(".")[1].length;
+        } catch (e) {
+            temp2 = 0;
+        }
+        times = Math.pow(10, Math.max(temp1, temp2));
+        n = temp1 >= temp2 ? temp1 : temp2;
+        return Math.abs(Number(((num2 * times - num1 * times) / times).toFixed(n)));
+    }
+    /**
+     * @description 数字精确相乘
+     * @param {*} num1
+     * @param {*} num2
+     * @returns 
+     */
+    public numMul(num1: any, num2: any) {
+        let m = 0,
+            temp1 = num1.toString(),
+            temp2 = num2.toString();
+        try {
+            m += temp1.split(".")[1].length
+        } catch (e) {}
+        try {
+            m += temp2.split(".")[1].length
+        } catch (e) {}
+        return Number(temp1.replace(".", "")) * Number(temp2.replace(".", "")) / Math.pow(10, m)
+    }
+    /**
+     * @description 数字精确相除
+     * @param {*} num1
+     * @param {*} num2
+     * @returns 
+     */
+    public numDivi(num1: any, num2: any) {
+        let temp1 = 0,
+            temp2 = 0,
+            r1, r2;
+        try {
+            temp1 = num1.toString().split(".")[1].length
+        } catch (e) {}
+        try {
+            temp2 = num2.toString().split(".")[1].length
+        } catch (e) {}
+        r1 = Number(num1.toString().replace(".", ""))
+        r2 = Number(num2.toString().replace(".", ""))
+        return (r1 / r2) * Math.pow(10, temp2 - temp1);
+    }
     /**
      * @description 生成指定位数的随机数
      * @param {number} placeRange 位数

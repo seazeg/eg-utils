@@ -77,5 +77,15 @@ declare class modules {
      * @returns {(object | Array < any >)}
      */
     deepCopy(obj: object | Array<any>): object | Array<any>;
+    /**
+     * @description 获取对象长度
+     * @param {{
+     *     [key: string]: any
+     *   }} obj
+     * @returns {number}
+     */
+    getObjectLen(obj: {
+        [key: string]: any;
+    }): number;
 }
 export { modules as ArrayMod };

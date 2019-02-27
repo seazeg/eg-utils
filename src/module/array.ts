@@ -107,7 +107,7 @@ class modules {
   public arrEqual(a: any, b: any): boolean {
     if (a === b) return true;
     if (a.length != b.length) return false;
-    for (var i = 0; i < a.length; ++i) {
+    for (let i = 0; i < a.length; ++i) {
       if (a[i] !== b[i]) return false;
     }
     return true;
@@ -121,7 +121,7 @@ class modules {
   public mergeJSON(a: any, b: any): Object {
     let temp = {};
     if (a && b) {
-      for (var i in b) {
+      for (let i in b) {
         a[i] = b[i];
       }
       temp = a;
@@ -135,6 +135,18 @@ class modules {
    */
   public deepCopy(obj: object | Array < any > ): object | Array < any > {
     return JSON.parse(JSON.stringify(obj))
+  }
+  /**
+   * @description 获取对象长度
+   * @param {{
+   *     [key: string]: any
+   *   }} obj
+   * @returns {number}
+   */
+  public getObjectLen(obj: {
+    [key: string]: any
+  }): number {
+    return Object.keys(obj).length
   }
 }
 

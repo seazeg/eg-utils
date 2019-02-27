@@ -130,6 +130,24 @@ class Modules {
         return !Object.keys(value).length
     }
     /**
+     * @description 判断是否是整数
+     * @param {*} value
+     * @returns {boolean}
+     */
+    public isInteger(value: any) {
+        return this.isNumber(value) &&
+            isFinite(value) &&
+            Math.floor(value) === value;
+    };
+    /**
+     * @description 判断是否是小数
+     * @param {*} value
+     * @returns {boolean}
+     */
+    public isFloat(value: any) {
+        return !this.isInteger(value);
+    };
+    /**
      * @description 判断是否为ios
      * @returns {Boolean}
      */
@@ -161,6 +179,13 @@ class Modules {
             }
         }
         return flag;
+    }
+    /**
+     * @description 判断是否支持webp
+     * @returns {boolean}
+     */
+    public isWebp(): boolean {
+        return !![].map && document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') == 0;
     }
     /**
      * @description 判断是否为闰年
@@ -207,7 +232,7 @@ class Modules {
         let b = ['1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2']; //校验码对照表
         let idArr = value.split("");
         let sum = 0;
-        for (var i = 0; i < 17; i++) {
+        for (let i = 0; i < 17; i++) {
             sum += parseInt(idArr[i]) * c[i];
         }
         if (idArr[17].toUpperCase() != b[sum % 11].toUpperCase()) {
