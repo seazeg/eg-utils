@@ -19,12 +19,12 @@ npm i eg-utils -S
 CDN
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/eg-utils@1.0.81/dist/eg-utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/eg-utils@1.0.9/dist/eg-utils.js"></script>
 ```
 
 unpkg
 ```html
-<script src="https://unpkg.com/eg-utils@1.0.81/dist/eg-utils.js"></script>
+<script src="https://unpkg.com/eg-utils@1.0.9/dist/eg-utils.js"></script>
 ```
 
 nodejs
