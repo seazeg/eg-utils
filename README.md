@@ -41,7 +41,7 @@ import egUtils from 'eg-utils'
  
 ## API 
 
-* *基础判断函数*
+* *基础判断函数* 
 
   * [isString (value) 判断字符串类型]()
   * [isNumber (value) 判断数字类型]()
@@ -58,6 +58,7 @@ import egUtils from 'eg-utils'
   * [isPromise (value) 判断promise类型]()
   * [isSet (value) 判断set类型]()
   * [isEmpty (value) 判断是否为空]()
+  * [isEmptyObject (value) 判断对象是否为空]()
   * [isIos () 判断是否为ios]()
   * [isAndroid () 判断是否为android]()
   * [isPC () 判断是否为pc]()
@@ -67,7 +68,7 @@ import egUtils from 'eg-utils'
   * [isVerify (value,type) 字符串综合校验]()
   * ...
   
-* *字符串操作函数*
+* *字符串操作函数* 
 
   * [trim (str,type) 去除字符串空格]()
   * [replaceAll (str, beforeStr, afterStr) 替换字符串中所有指定字符]()
@@ -80,7 +81,7 @@ import egUtils from 'eg-utils'
   * [toGB2312 (str) Unicode码转中文]()
   * ...
 
-* *数字操作函数*
+* *数字操作函数* 
 
   * [getPlaceRandomNum (placeRange, returnType) 生成指定位数的随机数]()
   * [getRangeRandomNum (min, max) 生成指定范围的随机数]()
@@ -88,7 +89,7 @@ import egUtils from 'eg-utils'
   * [changeToChnCurrency (value) 转换成大写货币格式]()
   * ...
 
-* *数组对象操作函数*
+* *数组对象操作函数* 
 
   * [arrUnique (arr) 数组元素去重]()
   * [arrSort (arr,type) 数组元素排序]()
@@ -99,11 +100,12 @@ import egUtils from 'eg-utils'
   * [arrMin (arr) 数组元素最小值（number）]()
   * [arrSum (arr) 数组元素求和（number）]()
   * [arrAverage (arr) 数组元素平均值（number）]()
+  * [arrEqual (arr) 数组元素平均值（number）]()
   * [mergeJSON (a,b) 合并两个对象]()
   * [deepCopy (obj) 深拷贝数组或对象]()
   * ...
 
-* *日期操作函数*
+* *日期操作函数* 
 
   * [formatDate (date,type) 格式化日期]()
   * [formatTime (time) 格式化时分秒]()
@@ -114,14 +116,30 @@ import egUtils from 'eg-utils'
   * [getDateMinusDaysDate (date,minusDays) 获取某日期前后若干天数的日期]() 
   * ...
 
-* *其他操作函数*
-
+* *DOM操作函数* 
+  * [hasClass (ele,cls) 判断是否有指定class]()
+  * [addClass (ele,cls) 添加class]()
+  * [removeClass (ele,cls) 删除class]()
   * [htmlToStirng (htmlDOM) html转成字符串]()
   * [stringToHtml (htmlString) 字符串转html]()
+  * ...
+
+* *浏览器函数* 
+
+  * [getBrowser () 获取当前浏览器版本]()
+  * [getOS () 获取当前操作系统类型]()
   * [getQueryParam (param) 获取url中指定参数值]()
-  * [getRandomColor () 随机生成色值]()
-  * [getBrowserType () 获取当前浏览器版本]()
+  * [parseQueryParam (url) url地址参数序列化]()
+  * [stringfyQueryParam (paramObj) url参数对象反序列化]()
   * [relativePathToFullPath (url) 获取相对路径的绝对路径]()
+  * [setCookie (key,value) 设置cookie]()
+  * [getCookie (key) 获取指定cookie]()
+  * [delCookie (key) 删除指定cookie]()
+  * ...
+
+* *其他操作函数* 
+
+  * [getRandomColor () 随机生成色值]()
   * [checkPwd (str) 校验密码强度(通用)]()
   * [HEXToRGB (str) 颜色16进制转RGB]()
   * [RGBToHEX (str) 颜色RGB转16进制]()

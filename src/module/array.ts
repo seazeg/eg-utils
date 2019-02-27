@@ -99,6 +99,20 @@ class modules {
     return this.arrSum(arr) / arr.length
   }
   /**
+   * @description 比较两个数组是否相等
+   * @param {*} a
+   * @param {*} b
+   * @returns {boolean}
+   */
+  public arrEqual(a: any, b: any): boolean {
+    if (a === b) return true;
+    if (a.length != b.length) return false;
+    for (var i = 0; i < a.length; ++i) {
+      if (a[i] !== b[i]) return false;
+    }
+    return true;
+  }
+  /**
    * @description 合并两个对象
    * @param {*} a 对象
    * @param {*} b 对象

@@ -120,6 +120,16 @@ class Modules {
         return typeof value == "undefined" || value == null || value == "" ? true : false
     }
     /**
+     * @description 判断对象是否为空
+     * @param {*} value
+     * @returns {Boolean}
+     */
+    public isEmptyObject(value: any): Boolean {
+        if (!value || typeof value !== 'object' || Array.isArray(value))
+            return false
+        return !Object.keys(value).length
+    }
+    /**
      * @description 判断是否为ios
      * @returns {Boolean}
      */
@@ -210,7 +220,7 @@ class Modules {
      * @param {*} value num-数字 en-英文 chn-中文 lower-小写 upper-大写 phone-手机号码 tel-座机 url-网址 ip-IP地址 date-日期格式 email-邮箱 postal-邮政编码 
      * @returns {boolean}
      */
-    public isVerify(value: any, type: any):boolean {
+    public isVerify(value: any, type: any): boolean {
         switch (type) {
             case 'num':
                 return /^[0-9]$/.test(value);

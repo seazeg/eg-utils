@@ -90,6 +90,12 @@ declare class Modules {
      */
     isEmpty(value: any): Boolean;
     /**
+     * @description 判断对象是否为空
+     * @param {*} value
+     * @returns {Boolean}
+     */
+    isEmptyObject(value: any): Boolean;
+    /**
      * @description 判断是否为ios
      * @returns {Boolean}
      */

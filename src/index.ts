@@ -14,6 +14,12 @@ import {
     ArrayMod
 } from './module/array'
 import {
+    DomMod
+} from './module/dom'
+import {
+    BrowserMod
+} from './module/browser'
+import {
     OtherMod
 } from './module/other'
 
@@ -40,6 +46,8 @@ class Center {
             'NumberMod': NumberMod,
             'DateMod': DateMod,
             'ArrayMod': ArrayMod,
+            'DomMod':DomMod,
+            'BrowserMod':BrowserMod,
             'OtherMod': OtherMod
         }
         let res = {}

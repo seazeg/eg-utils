@@ -99,6 +99,11 @@ test('arrSum:', () => {
 test('arrAverage:', () => {
     expect(egUtils.arrAverage([1, 2, 3])).toBe(2);
 });
+test('arrEqual:', () => {
+    expect(egUtils.arrEqual([1, 2, 3], [1, 2, 3])).toBe(true);
+});
+
+
 
 //number
 test('getFormatCurrency:', () => {
@@ -110,17 +115,22 @@ test('changeToChnCurrency:', () => {
 
 //string
 test('trim:', () => {
-    expect(egUtils.trim(' ab c ',1)).toBe('abc');
-    expect(egUtils.trim(' ab c ',2)).toBe('ab c');
-    expect(egUtils.trim(' ab c ',3)).toBe('ab c ');
-    expect(egUtils.trim(' ab c ',4)).toBe(' ab c');
+    expect(egUtils.trim(' ab c ', 1)).toBe('abc');
+    expect(egUtils.trim(' ab c ', 2)).toBe('ab c');
+    expect(egUtils.trim(' ab c ', 3)).toBe('ab c ');
+    expect(egUtils.trim(' ab c ', 4)).toBe(' ab c');
 });
 test('replaceAll:', () => {
-    expect(egUtils.replaceAll('aabbccc','b','f')).toBe('aaffccc');
+    expect(egUtils.replaceAll('aabbccc', 'b', 'f')).toBe('aaffccc');
 });
 test('replaceSubString:', () => {
-    expect(egUtils.replaceSubString({str:'aabbcc',subStart:1,
-    subEnd:3,beforeStr:'a',afterStr:'o'})).toBe('ob');
+    expect(egUtils.replaceSubString({
+        str: 'aabbcc',
+        subStart: 1,
+        subEnd: 3,
+        beforeStr: 'a',
+        afterStr: 'o'
+    })).toBe('ob');
 });
 test('filterHtmlCode:', () => {
     expect(egUtils.filterHtmlCode('<div>&123</div>')).toBe('&lt;div&gt&amp;123&lt;/div&gt');
@@ -143,13 +153,13 @@ test('toGB2312:', () => {
 
 //date
 test('formatDate:', () => {
-    expect(egUtils.formatDate(1551184404277,'yyyy-MM-dd hh:mm:ss')).toBe('2019-02-26 20:33:24');
+    expect(egUtils.formatDate(1551184404277, 'yyyy-MM-dd hh:mm:ss')).toBe('2019-02-26 20:33:24');
 });
 test('formatTime:', () => {
     expect(egUtils.formatTime(3620)).toBe('1小时0分20秒');
 });
 test('getDayMinus:', () => {
-    expect(egUtils.getDayMinus('2018-12-3','2019-2-26')).toBe(85);
+    expect(egUtils.getDayMinus('2018-12-3', '2019-2-26')).toBe(85);
 });
 test('getYearDays:', () => {
     expect(egUtils.getYearDays(2019)).toBe(365);
@@ -161,11 +171,17 @@ test('getWhichWeek:', () => {
     expect(egUtils.getWhichWeek('2019-2-26')).toBe(8);
 });
 test('getDateMinusDaysDate:', () => {
-    expect(egUtils.getDateMinusDaysDate('2018-12-3',158)).toBe('2019-5-10');
-    expect(egUtils.getDateMinusDaysDate('2018-12-3',-11)).toBe('2018-11-22');
+    expect(egUtils.getDateMinusDaysDate('2018-12-3', 158)).toBe('2019-5-10');
+    expect(egUtils.getDateMinusDaysDate('2018-12-3', -11)).toBe('2018-11-22');
 });
 
-
+// browser
+test('parseQueryParam:', () => {
+    expect(egUtils.parseQueryParam('http://www.evang.cn?a=1&b=2')).toEqual({a:'1',b:'2'});
+});
+test('stringfyQueryParam:', () => {
+    expect(egUtils.stringfyQueryParam({a:1,b:2})).toBe('a=1&b=2');
+});
 
 //other
 test('checkPwd:', () => {

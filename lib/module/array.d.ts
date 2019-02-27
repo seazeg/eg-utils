@@ -58,6 +58,13 @@ declare class modules {
      */
     arrAverage(arr: Array<number>): number;
     /**
+     * @description 比较两个数组是否相等
+     * @param {*} a
+     * @param {*} b
+     * @returns {boolean}
+     */
+    arrEqual(a: any, b: any): boolean;
+    /**
      * @description 合并两个对象
      * @param {*} a 对象
      * @param {*} b 对象
