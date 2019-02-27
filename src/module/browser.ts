@@ -92,7 +92,7 @@ class modules {
         let Days = days || 30 * 24 * 60 * 60 * 1000;
         let exp = new Date();
         exp.setTime(exp.getTime() + Days);
-        document.cookie = name + "=" + escape(value) + ";expires=" + exp.toUTCString();
+        document.cookie = key + "=" + escape(value) + ";expires=" + exp.toUTCString();
     }
     /**
      * @description 获取指定cookie
@@ -100,7 +100,7 @@ class modules {
      * @returns {*}
      */
     public getCookie(key: any): any {
-        let arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+        let arr = document.cookie.match(new RegExp("(^| )" + key + "=([^;]*)(;|$)"));
         if (arr != null) {
             return (arr[2]);
         } else {
@@ -116,7 +116,7 @@ class modules {
         exp.setTime(exp.getTime() - 1);
         let tmpValue = this.getCookie(key);
         if (tmpValue != null) {
-            document.cookie = name + "=" + tmpValue + ";expires=" + exp.toUTCString();
+            document.cookie = key + "=" + tmpValue + ";expires=" + exp.toUTCString();
         }
     }
     /**
