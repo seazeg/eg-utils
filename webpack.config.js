@@ -29,6 +29,6 @@ module.exports = {
         sourceMap: false
       }),
     ],
-    minimize:false
+    // minimize:false
   }
 };
