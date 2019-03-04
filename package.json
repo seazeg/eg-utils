@@ -1,6 +1,6 @@
 {
   "name": "eg-utils",
-  "version": "1.0.91",
+  "version": "1.0.10",
   "description": "eg-utils",
   "main": "index.js",
   "scripts": {
