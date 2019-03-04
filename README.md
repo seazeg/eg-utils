@@ -40,7 +40,7 @@ import egUtils from 'eg-utils'
 egUtils.isString('evang') //true
 ```
 
-### API [Document](https://github.com/seazeg/eg-utils/wiki)
+### API [Document](https://github.com/seazeg/eg-utils/wiki/API)
 
 
 ### License

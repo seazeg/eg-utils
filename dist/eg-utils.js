@@ -1,5 +1,5 @@
 /*!
- * egUtils.js version 1.1.2
+ * egUtils.js version 1.1.31
  * Author Evan.G
  * For more information, please visit https://github.com/seazeg/eg-utils
  * egUtils.js is available under the terms of the MIT license.
