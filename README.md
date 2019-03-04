@@ -41,7 +41,7 @@ import egUtils from 'eg-utils'
  
 ## API 
 
-  - ## [基础判断函数](#%E5%9F%BA%E7%A1%80%E5%88%A4%E6%96%AD%E5%87%BD%E6%95%B0)
+  - ## 基础判断函数
     - [isString (value) 判断字符串类型](#isstring-value-%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B)
     - [isNumber (value) 判断数字类型](#isnumber-value-%E5%88%A4%E6%96%AD%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B)
     - [isBoolean (value) 判断布尔类型](#isboolean-value-%E5%88%A4%E6%96%AD%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B)
@@ -68,7 +68,7 @@ import egUtils from 'eg-utils'
     - [isHtml (value) 判断是否含有html标签](#ishtml-value-%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E5%90%AB%E6%9C%89html%E6%A0%87%E7%AD%BE)
     - [isCardID (value) 判断校验身份证信息](#iscardid-value-%E5%88%A4%E6%96%AD%E6%A0%A1%E9%AA%8C%E8%BA%AB%E4%BB%BD%E8%AF%81%E4%BF%A1%E6%81%AF)
     - [isVerify (value,type) 字符串综合校验](#isverify-valuetype-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BB%BC%E5%90%88%E6%A0%A1%E9%AA%8C)
-  - ## [字符串操作函数](#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0)
+  - ## 字符串操作函数
     - [trim (str,type) 去除字符串空格](#trim-strtype-%E5%8E%BB%E9%99%A4%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%A9%BA%E6%A0%BC)
     - [replaceAll (str, beforeStr, afterStr) 替换字符串中所有指定字符](#replaceall-str-beforestr-afterstr-%E6%9B%BF%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E6%89%80%E6%9C%89%E6%8C%87%E5%AE%9A%E5%AD%97%E7%AC%A6)
     - [replaceSubString (options) 替换被截取字符串](#replacesubstring-options-%E6%9B%BF%E6%8D%A2%E8%A2%AB%E6%88%AA%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2)
@@ -78,7 +78,7 @@ import egUtils from 'eg-utils'
     - [compressRepeatedStr (str, ignoreCase) 压缩相同且连续的字符](#compressrepeatedstr-str-ignorecase-%E5%8E%8B%E7%BC%A9%E7%9B%B8%E5%90%8C%E4%B8%94%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%AD%97%E7%AC%A6)
     - [toUnicode (str) 中文转Unicode码](#tounicode-str-%E4%B8%AD%E6%96%87%E8%BD%ACunicode%E7%A0%81)
     - [toGB2312 (str) Unicode码转中文](#togb2312-str-unicode%E7%A0%81%E8%BD%AC%E4%B8%AD%E6%96%87)
-  - ## [数字操作函数](#%E6%95%B0%E5%AD%97%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0)
+  - ## 数字操作函数
     - [numAdd (num1, num2) 数字精确相加](#numadd-num1-num2-%E6%95%B0%E5%AD%97%E7%B2%BE%E7%A1%AE%E7%9B%B8%E5%8A%A0)
     - [numSub (num1, num2) 数字精确相减](#numsub-num1-num2-%E6%95%B0%E5%AD%97%E7%B2%BE%E7%A1%AE%E7%9B%B8%E5%87%8F)
     - [numMul (num1, num2) 数字精确相乘](#nummul-num1-num2-%E6%95%B0%E5%AD%97%E7%B2%BE%E7%A1%AE%E7%9B%B8%E4%B9%98)
@@ -87,7 +87,7 @@ import egUtils from 'eg-utils'
     - [getRangeRandomNum (min, max) 生成指定范围的随机数](#getrangerandomnum-min-max-%E7%94%9F%E6%88%90%E6%8C%87%E5%AE%9A%E8%8C%83%E5%9B%B4%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%95%B0)
     - [getFormatCurrency (value) 格式化成货币格式](#getformatcurrency-value-%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%88%90%E8%B4%A7%E5%B8%81%E6%A0%BC%E5%BC%8F)
     - [changeToChnCurrency (value) 转换成大写货币格式](#changetochncurrency-value-%E8%BD%AC%E6%8D%A2%E6%88%90%E5%A4%A7%E5%86%99%E8%B4%A7%E5%B8%81%E6%A0%BC%E5%BC%8F)
-  - ## [数组操作函数](#%E6%95%B0%E7%BB%84%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0)
+  - ## 数组操作函数
     - [arrUnique (arr) 数组元素去重](#arrunique-arr-%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E5%8E%BB%E9%87%8D)
     - [arrSort (arr,type) 数组元素排序](#arrsort-arrtype-%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E6%8E%92%E5%BA%8F)
     - [arrRemove (arr, ele) 删除指定的数组元素](#arrremove-arr-ele-%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E7%9A%84%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0)
@@ -101,7 +101,7 @@ import egUtils from 'eg-utils'
     - [getObjectLen (obj) 获取对象长度](#getobjectlen-obj-%E8%8E%B7%E5%8F%96%E5%AF%B9%E8%B1%A1%E9%95%BF%E5%BA%A6)
     - [mergeJSON (a,b) 合并两个对象](#mergejson-ab-%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E5%AF%B9%E8%B1%A1)
     - [deepCopy (obj) 深拷贝数组或对象](#deepcopy-obj-%E6%B7%B1%E6%8B%B7%E8%B4%9D%E6%95%B0%E7%BB%84%E6%88%96%E5%AF%B9%E8%B1%A1)
-  - ## [日期操作函数](#%E6%97%A5%E6%9C%9F%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0)
+  - ## 日期操作函数
     - [formatDate (date,type) 格式化日期](#formatdate-datetype-%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%A5%E6%9C%9F)
     - [formatTime (time) 格式化时分秒](#formattime-time-%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%B6%E5%88%86%E7%A7%92)
     - [getDayMinus (startDate,endDate) 获取两个日期间差值](#getdayminus-startdateenddate-%E8%8E%B7%E5%8F%96%E4%B8%A4%E4%B8%AA%E6%97%A5%E6%9C%9F%E9%97%B4%E5%B7%AE%E5%80%BC)
@@ -109,13 +109,13 @@ import egUtils from 'eg-utils'
     - [getMonthDays (date) 获取某年某月有多少天](#getmonthdays-date-%E8%8E%B7%E5%8F%96%E6%9F%90%E5%B9%B4%E6%9F%90%E6%9C%88%E6%9C%89%E5%A4%9A%E5%B0%91%E5%A4%A9)
     - [getWhichWeek (date) 获取某年某天是第几周](#getwhichweek-date-%E8%8E%B7%E5%8F%96%E6%9F%90%E5%B9%B4%E6%9F%90%E5%A4%A9%E6%98%AF%E7%AC%AC%E5%87%A0%E5%91%A8)
     - [getDateMinusDaysDate (date,minusDays) 获取某日期前后若干天数的日期](#getdateminusdaysdate-dateminusdays-%E8%8E%B7%E5%8F%96%E6%9F%90%E6%97%A5%E6%9C%9F%E5%89%8D%E5%90%8E%E8%8B%A5%E5%B9%B2%E5%A4%A9%E6%95%B0%E7%9A%84%E6%97%A5%E6%9C%9F)
-  - ## [DOM操作函数](#dom%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0)
+  - ## DOM操作函数
     - [hasClass (ele,cls) 判断是否有指定class](#hasclass-elecls-%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%9C%89%E6%8C%87%E5%AE%9Aclass)
     - [addClass (ele,cls) 添加class](#addclass-elecls-%E6%B7%BB%E5%8A%A0class)
     - [removeClass (ele,cls) 删除class](#removeclass-elecls-%E5%88%A0%E9%99%A4class)
     - [htmlToStirng (htmlDOM) html转成字符串](#htmltostirng-htmldom-html%E8%BD%AC%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2)
     - [stringToHtml (htmlString) 字符串转html](#stringtohtml-htmlstring-%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AChtml)
-  - ## [浏览器函数](#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%87%BD%E6%95%B0)
+  - ## 浏览器函数
     - [getBrowser () 获取当前浏览器版本](#getbrowser--%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%B5%8F%E8%A7%88%E5%99%A8%E7%89%88%E6%9C%AC)
     - [getOS () 获取当前操作系统类型](#getos--%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%B1%BB%E5%9E%8B)
     - [getQueryParam (param) 获取url中指定参数值](#getqueryparam-param-%E8%8E%B7%E5%8F%96url%E4%B8%AD%E6%8C%87%E5%AE%9A%E5%8F%82%E6%95%B0%E5%80%BC)
@@ -125,7 +125,7 @@ import egUtils from 'eg-utils'
     - [setCookie (key,value) 设置cookie](#setcookie-keyvalue-%E8%AE%BE%E7%BD%AEcookie)
     - [getCookie (key) 获取指定cookie](#getcookie-key-%E8%8E%B7%E5%8F%96%E6%8C%87%E5%AE%9Acookie)
     - [delCookie (key) 删除指定cookie](#delcookie-key-%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9Acookie)
-  - ## [其他操作函数](#%E5%85%B6%E4%BB%96%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0)
+  - ## 其他操作函数
     - [getRandomColor () 随机生成色值](#getrandomcolor--%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%90%E8%89%B2%E5%80%BC)
     - [checkPwd (str) 校验密码强度(通用)](#checkpwd-str-%E6%A0%A1%E9%AA%8C%E5%AF%86%E7%A0%81%E5%BC%BA%E5%BA%A6%E9%80%9A%E7%94%A8)
     - [HEXToRGB (str) 颜色16进制转RGB](#hextorgb-str-%E9%A2%9C%E8%89%B216%E8%BF%9B%E5%88%B6%E8%BD%ACrgb)
