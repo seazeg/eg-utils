@@ -1,6 +1,7 @@
 const webpack = require("webpack");
 const path = require('path');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
+const pkg = require('./package.json');
 
 module.exports = {
   entry: './src/index.ts',
@@ -21,6 +22,7 @@ module.exports = {
     library: "egUtils",
     libraryTarget: "window"
   },
+  mode: 'production',
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
@@ -30,5 +32,9 @@ module.exports = {
       }),
     ],
     // minimize:false
-  }
+  },
+  plugins: [
+    new webpack.BannerPlugin(`${pkg.description} version ${pkg.version}\nAuthor Evan.G\nFor more information, please visit ${pkg.author.github}\n${pkg.description} is available under the terms of the MIT license.`)
+  ]
+  
 };

@@ -1,7 +1,7 @@
 {
   "name": "eg-utils",
-  "version": "1.0.10",
-  "description": "eg-utils",
+  "version": "1.1.0",
+  "description": "egUtils.js",
   "main": "index.js",
   "scripts": {
     "start": "webpack --config webpack.config.js",
@@ -11,7 +11,8 @@
   },
   "author": {
     "name": "Evan.G",
-    "email": "seazeg@126.com"
+    "email": "seazeg@126.com",
+    "github":"https://github.com/seazeg/eg-utils"
   },
   "keywords": [
     "utils",
