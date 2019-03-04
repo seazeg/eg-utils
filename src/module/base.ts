@@ -125,8 +125,6 @@ class Modules {
      * @returns {Boolean}
      */
     public isEmptyObject(value: any): Boolean {
-        if (!value || typeof value !== 'object' || Array.isArray(value))
-            return false
         return !Object.keys(value).length
     }
     /**

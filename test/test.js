@@ -46,6 +46,9 @@ test('isSet:', () => {
 test('isEmpty:', () => {
     expect(egUtils.isEmpty('')).toBe(true);
 });
+test('isEmptyObject:', () => {
+    expect(egUtils.isEmptyObject({})).toBe(true);
+});
 test('isInteger:', () => {
     expect(egUtils.isInteger(100)).toBe(true);
 });
@@ -81,8 +84,8 @@ test('arrUnique:', () => {
     expect(egUtils.arrUnique([1, 1, 2, 3])).toEqual([1, 2, 3]);
 });
 test('arrSort:', () => {
-    expect(egUtils.arrSort([1, 3, 2], 1)).toEqual([3, 2, 1]);
-    expect(egUtils.arrSort([1, 3, 2], 2)).toEqual([1, 2, 3]);
+    expect(egUtils.arrSort([1, 3, 2], 'down')).toEqual([3, 2, 1]);
+    expect(egUtils.arrSort([1, 3, 2], 'up')).toEqual([1, 2, 3]);
 });
 test('arrRemove:', () => {
     expect(egUtils.arrRemove(['aa', 'bb', 'cc'], 'bb')).toEqual(['aa', 'cc']);

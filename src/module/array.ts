@@ -16,17 +16,17 @@ class modules {
   /**
    * @description 数组元素排序
    * @param {*} arr 数组
-   * @param {number} type 1-降序  2-升序  3-随机
+   * @param {number} type down-降序  up-升序  rad-随机
    * @returns {Array < any >}
    */
-  public arrSort(arr: any, type: number): Array < any > {
+  public arrSort(arr: any, type: string): Array < any > {
     return arr.sort(function (a: any, b: any): any {
       switch (type) {
-        case 1:
+        case 'down':
           return b - a;
-        case 2:
+        case 'up':
           return a - b;
-        case 3:
+        case 'rad':
           return Math.random() - 0.5;
         default:
           return arr;

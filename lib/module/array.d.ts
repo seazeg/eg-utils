@@ -8,10 +8,10 @@ declare class modules {
     /**
      * @description 数组元素排序
      * @param {*} arr 数组
-     * @param {number} type 1-降序  2-升序  3-随机
+     * @param {number} type down-降序  up-升序  rad-随机
      * @returns {Array < any >}
      */
-    arrSort(arr: any, type: number): Array<any>;
+    arrSort(arr: any, type: string): Array<any>;
     /**
      * @description 删除指定的数组元素
      * @param {Array < any >} arr

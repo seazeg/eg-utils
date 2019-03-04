@@ -29,9 +29,9 @@ declare class modules extends BaseMod {
      */
     numDivi(num1: any, num2: any): number;
     /**
-     * @description 生成指定位数的随机数
-     * @param {number} placeRange 位数
-     * @param {string} returnType
+     * @description 生成指定位数内的随机数
+     * @param {number} placeRange 位数 10,100..
+     * @param {string} returnType 默认整数/小数float
      * @returns {number}
      */
     getPlaceRandomNum(placeRange: number, returnType: string): number;
@@ -39,9 +39,10 @@ declare class modules extends BaseMod {
      * @description 生成指定范围的随机数
      * @param {number} min 最小值
      * @param {number} max 最大值
+     * @param {string} returnType 默认整数/小数float
      * @returns {number}
      */
-    getRangeRandomNum(min: number, max: number): number;
+    getRangeRandomNum(min: number, max: number, returnType: string): number;
     /**
      * @description 格式化成货币格式
      * @param {string} value

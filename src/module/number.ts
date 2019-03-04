@@ -99,9 +99,9 @@ class modules extends BaseMod {
         return (r1 / r2) * Math.pow(10, temp2 - temp1);
     }
     /**
-     * @description 生成指定位数的随机数
-     * @param {number} placeRange 位数
-     * @param {string} returnType
+     * @description 生成指定位数内的随机数
+     * @param {number} placeRange 位数 10,100..
+     * @param {string} returnType 默认整数/小数float
      * @returns {number}
      */
     public getPlaceRandomNum(placeRange: number, returnType: string): number {
@@ -111,10 +111,11 @@ class modules extends BaseMod {
      * @description 生成指定范围的随机数
      * @param {number} min 最小值
      * @param {number} max 最大值
+     * @param {string} returnType 默认整数/小数float
      * @returns {number}
      */
-    public getRangeRandomNum(min: number, max: number): number {
-        return Math.floor(min + Math.random() * ((max + 1) - min))
+    public getRangeRandomNum(min: number, max: number,returnType:string): number {
+        return returnType == "float" ? min + Math.random() * ((max + 1) - min) : Math.floor(min + Math.random() * ((max + 1) - min));
     }
     /**
      * @description 格式化成货币格式
