@@ -124,12 +124,11 @@ class modules {
      * @param {string} url 相对路径
      * @returns {string} 绝对路径
      */
-    public relativePathToFullPath(url: string): string {
-        let img = new Image();
-        img.src = url;
-        url = img.src;
-        img.src = '';
-        return url;
+    public getAbsoluteUrl(url: string): string {
+        let a;
+        if(!a) a = document.createElement('a');
+        a.href = url;
+        return a.href;
     };
 
 }

@@ -52,6 +52,6 @@ declare class modules {
      * @param {string} url 相对路径
      * @returns {string} 绝对路径
      */
-    relativePathToFullPath(url: string): string;
+    getAbsoluteUrl(url: string): string;
 }
 export { modules as BrowserMod };

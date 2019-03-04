@@ -22,5 +22,26 @@ declare class modules {
      * @returns {string} #000000
      */
     RGBToHEX(str: string): string;
+    /**
+     * @description 一次执行函数（防止重复调用或加载）
+     * @param {*} fn
+     * @param {*} context
+     * @returns
+     */
+    once(func: any, context: any): () => any;
+    /**
+     * @description 防抖函数
+     * @param {*} func 函数体
+     * @param {number} wait 间隔时间
+     * @returns
+     */
+    debounce(func: any, wait: number): () => void;
+    /**
+     * @description 节流函数
+     * @param {*} func 函数体
+     * @param {number} wait 间隔时间
+     * @returns
+     */
+    throttle(func: any, wait: number): () => void;
 }
 export { modules as OtherMod };

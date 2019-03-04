@@ -98,6 +98,61 @@ class modules {
         }
         return result;
     }
+    /**
+     * @description 一次执行函数（防止重复调用或加载）
+     * @param {*} fn
+     * @param {*} context
+     * @returns 
+     */
+    public once(func: any, context: any) {
+        let result: any;
+        let _this = this;
+        return function () {
+            if (func) {
+                result = func.apply(context || _this, arguments);
+                func = null;
+            }
+            return result;
+        };
+    }
+    /**
+     * @description 防抖函数
+     * @param {*} func 函数体
+     * @param {number} wait 间隔时间
+     * @returns 
+     */
+    public debounce(func: any, wait: number) {
+        let timer: any = null;
+        let self = this;
+        return function () {
+            let args = arguments;
+            timer && clearTimeout(timer);
+            timer = setTimeout(function () {
+                func.apply(self, args);
+            }, wait);
+        }
+    };
+    /**
+     * @description 节流函数
+     * @param {*} func 函数体
+     * @param {number} wait 间隔时间
+     * @returns 
+     */
+    public throttle(func: any, wait: number) {
+        let isExecute = false;
+        let self = this;
+        return function () {
+            var args = Array.prototype.slice.apply(arguments);
+            if (isExecute) {
+                return;
+            }
+            isExecute = true;
+            setTimeout(function () {
+                func.apply(self, args);
+                isExecute = false
+            }, wait)
+        }
+    }
 }
 
 export {

@@ -134,10 +134,10 @@ test('changeToChnCurrency:', () => {
 
 //string
 test('trim:', () => {
-    expect(egUtils.trim(' ab c ', 1)).toBe('abc');
-    expect(egUtils.trim(' ab c ', 2)).toBe('ab c');
-    expect(egUtils.trim(' ab c ', 3)).toBe('ab c ');
-    expect(egUtils.trim(' ab c ', 4)).toBe(' ab c');
+    expect(egUtils.trim(' ab c ', 'all')).toBe('abc');
+    expect(egUtils.trim(' ab c ', 'side')).toBe('ab c');
+    expect(egUtils.trim(' ab c ', 'left')).toBe('ab c ');
+    expect(egUtils.trim(' ab c ', 'right')).toBe(' ab c');
 });
 test('replaceAll:', () => {
     expect(egUtils.replaceAll('aabbccc', 'b', 'f')).toBe('aaffccc');

@@ -139,7 +139,7 @@ import egUtils from 'eg-utils'
   * [getQueryParam (param) 获取url中指定参数值]()
   * [parseQueryParam (url) url地址参数序列化]()
   * [stringfyQueryParam (paramObj) url参数对象反序列化]()
-  * [relativePathToFullPath (url) 获取相对路径的绝对路径]()
+  * [getAbsoluteUrl (url) 获取相对路径的绝对路径]()
   * [setCookie (key,value) 设置cookie]()
   * [getCookie (key) 获取指定cookie]()
   * [delCookie (key) 删除指定cookie]()
@@ -151,6 +151,9 @@ import egUtils from 'eg-utils'
   * [checkPwd (str) 校验密码强度(通用)]()
   * [HEXToRGB (str) 颜色16进制转RGB]()
   * [RGBToHEX (str) 颜色RGB转16进制]()
+  * [once (func,context) 一次执行函数]()
+  * [debounce (func,wait) 防抖函数]()
+  * [throttle (func,wait) 节流函数]()
   * ...
 
 ## License

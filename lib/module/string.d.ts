@@ -3,10 +3,10 @@ declare class modules extends BaseMod {
     /**
      * @description 去除字符串空格
      * @param {string} str 字符串
-     * @param {number} type 1-所有空格  2-前后空格  3-前空格 4-后空格
+     * @param {number} type all-所有空格  side-前后空格  left-前空格 right-后空格
      * @returns {string}
      */
-    trim(str: string, type: number): string;
+    trim(str: string, type: string): string;
     /**
      * @description 替换字符串中所有指定字符
      * @param {string} str 内容

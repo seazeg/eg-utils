@@ -5,19 +5,19 @@ class modules extends BaseMod {
     /**
      * @description 去除字符串空格
      * @param {string} str 字符串
-     * @param {number} type 1-所有空格  2-前后空格  3-前空格 4-后空格
+     * @param {number} type all-所有空格  side-前后空格  left-前空格 right-后空格
      * @returns {string}
      */
-    public trim(str: string, type: number): string {
-        type = type || 1
+    public trim(str: string, type: string): string {
+        type = type || 'all'
         switch (type) {
-            case 1:
+            case 'all':
                 return str.replace(/\s+/g, "");
-            case 2:
+            case 'side':
                 return str.replace(/(^\s*)|(\s*$)/g, "");
-            case 3:
+            case 'left':
                 return str.replace(/(^\s*)/g, "");
-            case 4:
+            case 'right':
                 return str.replace(/(\s*$)/g, "");
             default:
                 return str;
