@@ -43,6 +43,6 @@ egUtils.isString('evang') //true
 ## API [Document]("https://github.com/seazeg/eg-utils"). 
 
 
-## License
+### License
 
 Copyright (c) 2019-present, Evan.G
