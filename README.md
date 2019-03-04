@@ -16,28 +16,30 @@ eg-Utils 提供常用的一些工具函数和方法
 ```javascript
 npm i eg-utils -S
 ```
-CDN
 
+## 开始使用
+
+CDN / unpkg
 ```html
 <script src="https://cdn.jsdelivr.net/npm/eg-utils@1.0.91/dist/eg-utils.js"></script>
-```
-
-unpkg
-```html
-<script src="https://unpkg.com/eg-utils@1.0.91/dist/eg-utils.js"></script>
+<!-- <script src="https://unpkg.com/eg-utils@1.0.91/dist/eg-utils.js"></script> -->
+<script>
+egUtils.isString('evang') //true
+</script>
 ```
 
 nodejs
-
 ```javascript
-const egUtils = require('eg-utils')
+const egUtils = require('eg-utils');
+egUtils.isString('evang') //true
 ```
 
 ES6
-
 ```javascript
 import egUtils from 'eg-utils'
+egUtils.isString('evang') //true
 ```
+
  
 ## API 
 
