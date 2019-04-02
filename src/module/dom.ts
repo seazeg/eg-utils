@@ -48,7 +48,30 @@ class modules {
         temp.innerHTML = htmlString;
         return temp.children[0];
     }
-
+    /**
+     * @description 简易双向绑定
+     * @param {*} inputObj 输入的input
+     * @param {*} outputObj 输出的input
+     * @returns {*}
+     */
+    public viewModel(inputObj: any, outputObj: any): any {
+        let model: {
+            [key: string]: any
+        } = new Object()
+        let key:any = null;
+        Object.defineProperty(model, 'key', {
+            set: function (value) {
+                key = value;
+                outputObj.value = value;
+            },
+            get: function () {
+                return key
+            }
+        })
+        inputObj.addEventListener('input', function () {
+            model['key'] = inputObj.value
+        })
+    }
 }
 export {
     modules as DomMod

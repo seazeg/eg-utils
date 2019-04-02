@@ -30,5 +30,12 @@ declare class modules {
      * @returns {*}
      */
     stringToHtml(htmlString: any): any;
+    /**
+     * @description 简易双向绑定
+     * @param {*} inputObj 输入的input
+     * @param {*} outputObj 输出的input
+     * @returns {*}
+     */
+    viewModel(inputObj: any, outputObj: any): any;
 }
 export { modules as DomMod };
