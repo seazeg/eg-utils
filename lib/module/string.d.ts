@@ -64,5 +64,10 @@ declare class modules extends BaseMod {
      * @returns {string}
      */
     toGB2312(str: any): string;
+    /**
+    * @description 超出字符进行截取
+    * @param {*} cls class名称
+    */
+    overCharfix(cls: string): void;
 }
 export { modules as StringMod };

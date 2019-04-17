@@ -105,7 +105,7 @@ class modules extends BaseMod {
      * @param {boolean} 是否区分大小写
      * @returns {string} bbbssss => 3b4s
      */
-    public compressRepeatedStr(str: string, ignoreCase: boolean):string {
+    public compressRepeatedStr(str: string, ignoreCase: boolean): string {
         let regex = new RegExp("([a-z])\\1+", ignoreCase ? "gi" : "g");
         return str.replace(regex, function (str, group) {
             return str.length + group;
@@ -116,7 +116,7 @@ class modules extends BaseMod {
      * @param {string} str
      * @returns {string}
      */
-    public toUnicode(str: string):string {
+    public toUnicode(str: string): string {
         if (!super.isEmpty(str)) {
             return escape(str).toLocaleLowerCase().replace(/%u/gi, '\\u');
         } else {
@@ -129,11 +129,31 @@ class modules extends BaseMod {
      * @param {string} str
      * @returns {string}
      */
-    public toGB2312(str: any):string {
+    public toGB2312(str: any): string {
         if (!super.isEmpty(str)) {
             return unescape(str.replace(/\\u/gi, '%u'));
         } else {
             return str;
+        }
+    }
+     /**
+     * @description 超出字符进行截取
+     * @param {*} cls class名称
+     */
+    public overCharfix(cls: string): void {
+        var _els = document.getElementsByClassName(cls)
+        for (let i = 0; i < _els.length; i++) {
+            let el: any = _els[i];
+            let outHeight = el.offsetHeight;
+            let content = el.getAttribute('data-content')
+            for (i = 0; i < content.length; i += 2) {
+                el.innerHTML = content.substr(0, i);
+                if (outHeight < el.scrollHeight) {
+                    el.style.overflow = 'hidden';
+                    el.innerHTML = content.substr(0, i - 6) + '...';
+                    break;
+                }
+            }
         }
     }
 }
