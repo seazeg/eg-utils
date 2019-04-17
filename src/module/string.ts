@@ -144,8 +144,9 @@ class modules extends BaseMod {
         var _els = document.getElementsByClassName(cls)
         for (let i = 0; i < _els.length; i++) {
             let el: any = _els[i];
-            let outHeight = el.offsetHeight;
             let content = el.getAttribute('data-content')
+            el.innerHTML = content;
+            let outHeight = el.offsetHeight;
             for (i = 0; i < content.length; i += 2) {
                 el.innerHTML = content.substr(0, i);
                 if (outHeight < el.scrollHeight) {
