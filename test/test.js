@@ -90,6 +90,19 @@ test('arrSort:', () => {
 test('arrRemove:', () => {
     expect(egUtils.arrRemove(['aa', 'bb', 'cc'], 'bb')).toEqual(['aa', 'cc']);
 });
+test('arrRemoveObj:', () => {
+    expect(egUtils.arrRemoveObj([{
+        a: 1
+    }, {
+        a: 2
+    }, {
+        a: 3
+    }], 'a', 2)).toEqual([{
+        a: 1
+    }, {
+        a: 3
+    }]);
+});
 test('arrUnion:', () => {
     expect(egUtils.arrUnion([1, 2, 3], [1, 3, 4])).toEqual([1, 2, 3, 4]);
 });
@@ -112,21 +125,24 @@ test('arrEqual:', () => {
     expect(egUtils.arrEqual([1, 2, 3], [1, 2, 3])).toBe(true);
 });
 test('getObjectLen:', () => {
-    expect(egUtils.getObjectLen({a:1,b:2})).toBe(2);
+    expect(egUtils.getObjectLen({
+        a: 1,
+        b: 2
+    })).toBe(2);
 });
 
 //number
 test('numAdd:', () => {
-    expect(egUtils.numAdd(300,3.14)).toBe(303.14);
+    expect(egUtils.numAdd(300, 3.14)).toBe(303.14);
 });
 test('numSub:', () => {
-    expect(egUtils.numSub(300,3.14)).toBe(296.86);
+    expect(egUtils.numSub(300, 3.14)).toBe(296.86);
 });
 test('numMul:', () => {
-    expect(egUtils.numMul(300,3.14)).toBe(942);
+    expect(egUtils.numMul(300, 3.14)).toBe(942);
 });
 test('numDivi:', () => {
-    expect(egUtils.numDivi(300,2.5)).toBe(120);
+    expect(egUtils.numDivi(300, 2.5)).toBe(120);
 });
 test('getFormatCurrency:', () => {
     expect(egUtils.getFormatCurrency('10000')).toBe('10,000');
@@ -199,10 +215,16 @@ test('getDateMinusDaysDate:', () => {
 
 // browser
 test('parseQueryParam:', () => {
-    expect(egUtils.parseQueryParam('http://www.evang.cn?a=1&b=2')).toEqual({a:'1',b:'2'});
+    expect(egUtils.parseQueryParam('http://www.evang.cn?a=1&b=2')).toEqual({
+        a: '1',
+        b: '2'
+    });
 });
 test('stringfyQueryParam:', () => {
-    expect(egUtils.stringfyQueryParam({a:1,b:2})).toBe('a=1&b=2');
+    expect(egUtils.stringfyQueryParam({
+        a: 1,
+        b: 2
+    })).toBe('a=1&b=2');
 });
 
 //other

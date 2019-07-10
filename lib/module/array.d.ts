@@ -20,6 +20,14 @@ declare class modules {
      */
     arrRemove(arr: Array<any>, ele: any): Array<any>;
     /**
+     * @description 删除指定的数组中对象元素
+     * @param {Array < any >} arr
+     * @param {*} field 对象字段
+     * @param {*} value 匹配的值
+     * @returns {Array < any >}
+     */
+    arrRemoveObj(arr: Array<any>, field: any, value: any): Array<any>;
+    /**
      * @description 获得两个数组的并集
      * @param {Array < any >} a
      * @param {Array < any >} b

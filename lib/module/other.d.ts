@@ -1,5 +1,10 @@
 declare class modules {
     /**
+     * @description 随机生成不重复的GUID
+     * @returns {string}
+     */
+    guid(): string;
+    /**
      * @description 随机生成色值
      * @returns {string}
      */

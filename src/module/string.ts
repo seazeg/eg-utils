@@ -136,27 +136,6 @@ class modules extends BaseMod {
             return str;
         }
     }
-     /**
-     * @description 超出字符进行截取
-     * @param {*} cls class名称
-     */
-    public overCharfix(cls: string): void {
-        var _els = document.getElementsByClassName(cls)
-        for (let i = 0; i < _els.length; i++) {
-            let el: any = _els[i];
-            let content = el.getAttribute('data-content')
-            el.innerHTML = content;
-            let outHeight = el.offsetHeight;
-            for (i = 0; i < content.length; i += 2) {
-                el.innerHTML = content.substr(0, i);
-                if (outHeight < el.scrollHeight) {
-                    el.style.overflow = 'hidden';
-                    el.innerHTML = content.substr(0, i - 6) + '...';
-                    break;
-                }
-            }
-        }
-    }
 }
 
 export {

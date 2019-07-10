@@ -45,6 +45,21 @@ class modules {
     return arr;
   }
   /**
+   * @description 删除指定的数组中对象元素
+   * @param {Array < any >} arr
+   * @param {*} field 对象字段
+   * @param {*} value 匹配的值
+   * @returns {Array < any >}
+   */
+  public arrRemoveObj(arr: Array < any > , field: any, value: any): Array < any > {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i][field] === value) {
+        arr.splice(i, 1)
+      }
+    }
+    return arr;
+  }
+  /**
    * @description 获得两个数组的并集
    * @param {Array < any >} a
    * @param {Array < any >} b
