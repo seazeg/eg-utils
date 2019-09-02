@@ -21,8 +21,8 @@ npm i eg-utils -S
 
 CDN / unpkg
 ```html
-<script src="https://cdn.jsdelivr.net/npm/eg-utils@1.1.51/dist/eg-utils.js"></script>
-<!-- <script src="https://unpkg.com/eg-utils@1.1.51/dist/eg-utils.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/eg-utils@1.1.52/dist/eg-utils.js"></script>
+<!-- <script src="https://unpkg.com/eg-utils@1.1.52/dist/eg-utils.js"></script> -->
 <script>
 egUtils.isString('evang') //true
 </script>

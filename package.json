@@ -1,6 +1,6 @@
 {
   "name": "eg-utils",
-  "version": "1.1.51",
+  "version": "1.1.52",
   "description": "egUtils.js",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,10 @@
     "name": "Evan.G",
     "email": "seazeg@126.com",
     "github":"https://github.com/seazeg/eg-utils"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seazeg/eg-utils"
   },
   "keywords": [
     "utils",
