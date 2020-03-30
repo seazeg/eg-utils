@@ -48,10 +48,33 @@ declare class modules {
      */
     delCookie(key: any): void;
     /**
-     * @description 获取相对路径的绝对路径
-     * @param {string} url 相对路径
-     * @returns {string} 绝对路径
+     * @description 获取滚动条的位置坐标
+     * @param {*} el dom元素，默认window
      */
-    getAbsoluteUrl(url: string): string;
+    getScrollPosition(el?: any): object;
+    /**
+     * @description 滚动到指定元素区域
+     * @param {*} el dom元素
+     */
+    rollToViewArea(el: any): void;
+    /**
+     * @description storage存储(可设置过期时间)
+     * @param {*} key
+     * @param {*} value
+     * @param {string} type true-localStorage, false-sessionStorage
+     */
+    storageSet(key: any, value: any, type: boolean | undefined, expires: number): void;
+    /**
+     * @description storage读取
+     * @param {*} key
+     * @param {string} type true-localStorage, false-sessionStorage
+     */
+    storageGet(key: any, type?: boolean): string | null;
+    /**
+     * @description storage读取
+     * @param {*} key
+     * @param {string} type true-localStorage, false-sessionStorage
+     */
+    storageRemove(key: any, type?: boolean): void;
 }
 export { modules as BrowserMod };

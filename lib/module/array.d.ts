@@ -95,5 +95,12 @@ declare class modules {
     getObjectLen(obj: {
         [key: string]: any;
     }): number;
+    /**
+     * @description 获取数组内指定值出现的次数
+     * @param {Array < any >} arr
+     * @param {(string | number)} value
+     * @returns {number}
+     */
+    countOccurrences(arr: Array<any>, value: string | number): number;
 }
 export { modules as ArrayMod };

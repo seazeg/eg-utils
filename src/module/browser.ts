@@ -4,14 +4,18 @@ class modules {
      * @returns {*}
      */
     public getBrowser(): any {
-        let sys:{[key: string]: any} = {},ua = navigator.userAgent.toLowerCase(),s;
-            (s = ua.match(/rv:([\d.]+)\) like gecko/)) ? sys.ie = s[1]:
-            (s = ua.match(/msie ([\d\.]+)/)) ? sys.ie = s[1]:
-            (s = ua.match(/edge\/([\d\.]+)/)) ? sys.edge = s[1]:
-            (s = ua.match(/firefox\/([\d\.]+)/)) ? sys.firefox = s[1]:
-            (s = ua.match(/(?:opera|opr).([\d\.]+)/)) ? sys.opera = s[1]:
-            (s = ua.match(/chrome\/([\d\.]+)/)) ? sys.chrome = s[1]:
-            (s = ua.match(/version\/([\d\.]+).*safari/)) ? sys.safari = s[1]:0;
+        let sys: {
+                [key: string]: any
+            } = {},
+            ua = navigator.userAgent.toLowerCase(),
+            s;
+        (s = ua.match(/rv:([\d.]+)\) like gecko/)) ? sys.ie = s[1]:
+            (s = ua.match(/msie ([\d\.]+)/)) ? sys.ie = s[1] :
+            (s = ua.match(/edge\/([\d\.]+)/)) ? sys.edge = s[1] :
+            (s = ua.match(/firefox\/([\d\.]+)/)) ? sys.firefox = s[1] :
+            (s = ua.match(/(?:opera|opr).([\d\.]+)/)) ? sys.opera = s[1] :
+            (s = ua.match(/chrome\/([\d\.]+)/)) ? sys.chrome = s[1] :
+            (s = ua.match(/version\/([\d\.]+).*safari/)) ? sys.safari = s[1] : 0;
         if (sys.ie) return ('IE: ' + sys.ie)
         if (sys.edge) return ('EDGE: ' + sys.edge)
         if (sys.firefox) return ('Firefox: ' + sys.firefox)
@@ -24,11 +28,11 @@ class modules {
      * @description 获取当前操作系统类型
      * @returns {*}
      */
-    public getOS():any {
+    public getOS(): any {
         let userAgent = 'navigator' in window && 'userAgent' in navigator && navigator.userAgent.toLowerCase() || '';
         let vendor = 'navigator' in window && 'vendor' in navigator && navigator.vendor.toLowerCase() || '';
         let appVersion = 'navigator' in window && 'appVersion' in navigator && navigator.appVersion.toLowerCase() || '';
-    
+
         if (/mac/i.test(appVersion)) return 'MacOSX'
         if (/win/i.test(appVersion)) return 'windows'
         if (/linux/i.test(appVersion)) return 'linux'
@@ -54,7 +58,7 @@ class modules {
      * @param {string} url
      * @returns {*}
      */
-    public parseQueryParam(url:string):any {
+    public parseQueryParam(url: string): any {
         url = url == null ? window.location.href : url
         let search = url.substring(url.lastIndexOf('?') + 1)
         if (!search) {
@@ -67,7 +71,9 @@ class modules {
      * @param {{[key:string]:any}} paramObj {a:1,b:1}
      * @returns {*}
      */
-    public stringfyQueryParam(paramObj:{[key:string]:any}):any {
+    public stringfyQueryParam(paramObj: {
+        [key: string]: any
+    }): any {
         if (!paramObj) return '';
         let temp = [];
         for (let key in paramObj) {
@@ -120,17 +126,55 @@ class modules {
         }
     }
     /**
-     * @description 获取相对路径的绝对路径
-     * @param {string} url 相对路径
-     * @returns {string} 绝对路径
+     * @description 获取滚动条的位置坐标
+     * @param {*} el dom元素，默认window
      */
-    public getAbsoluteUrl(url: string): string {
-        let a;
-        if(!a) a = document.createElement('a');
-        a.href = url;
-        return a.href;
+    public getScrollPosition(el: any = window): object {
+        return {
+            x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,
+            y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop
+        }
     };
-
+    /**
+     * @description 滚动到指定元素区域
+     * @param {*} el dom元素
+     */
+    public rollToViewArea(el: any) {
+        document.querySelector(el).scrollIntoView({
+            behavior: 'smooth'
+        });
+    };
+    /**
+     * @description storage存储(可设置过期时间)
+     * @param {*} key 
+     * @param {*} value
+     * @param {string} type true-localStorage, false-sessionStorage
+     */
+    public storageSet(key: any, value: any, type: boolean = true, expires: number) {
+        if (typeof (value) === 'object') value = JSON.stringify(value);
+        type ? localStorage.setItem(key, value) : sessionStorage.setItem(key, value)
+        if (expires) {
+            setTimeout(() => {
+                localStorage.removeItem(key)
+            }, expires)
+        }
+    };
+    /**
+     * @description storage读取
+     * @param {*} key 
+     * @param {string} type true-localStorage, false-sessionStorage
+     */
+    public storageGet(key: any, type: boolean = true) {
+        return localStorage.getItem(key)
+    };
+    /**
+     * @description storage读取
+     * @param {*} key 
+     * @param {string} type true-localStorage, false-sessionStorage
+     */
+    public storageRemove(key: any, type: boolean = true) {
+        type ? localStorage.removeItem(key) : sessionStorage.removeItem(key)
+    };
 }
 
 export {

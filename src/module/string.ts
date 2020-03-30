@@ -49,7 +49,7 @@ class modules extends BaseMod {
         return temp.replace(options.beforeStr, options.afterStr)
     }
     /**
-     * @description 过滤html操作符
+     * @description 过滤html操作符(防XSS)
      * @param {string} value 
      * @returns {string}
      */
@@ -136,6 +136,17 @@ class modules extends BaseMod {
             return str;
         }
     }
+    /**
+     * @description 获取相对路径的绝对路径
+     * @param {string} url 相对路径
+     * @returns {string} 绝对路径
+     */
+    public getAbsoluteUrl(url: string): string {
+        let a;
+        if(!a) a = document.createElement('a');
+        a.href = url;
+        return a.href;
+    };
 }
 
 export {

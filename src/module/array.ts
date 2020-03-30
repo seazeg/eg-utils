@@ -163,6 +163,15 @@ class modules {
   }): number {
     return Object.keys(obj).length
   }
+  /**
+   * @description 获取数组内指定值出现的次数
+   * @param {Array < any >} arr
+   * @param {(string | number)} value
+   * @returns {number}
+   */
+  public countOccurrences(arr: Array < any > , value: string | number): number {
+    return arr.reduce((a, v) => v === value ? a + 1 : a + 0, 0);
+  }
 }
 
 export {

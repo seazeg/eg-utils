@@ -28,7 +28,7 @@ declare class modules extends BaseMod {
         [key: string]: any;
     }): string;
     /**
-     * @description 过滤html操作符
+     * @description 过滤html操作符(防XSS)
      * @param {string} value
      * @returns {string}
      */
@@ -64,5 +64,11 @@ declare class modules extends BaseMod {
      * @returns {string}
      */
     toGB2312(str: any): string;
+    /**
+     * @description 获取相对路径的绝对路径
+     * @param {string} url 相对路径
+     * @returns {string} 绝对路径
+     */
+    getAbsoluteUrl(url: string): string;
 }
 export { modules as StringMod };
