@@ -89,6 +89,25 @@ class modules {
         return temp.join('&');
     }
     /**
+     * @description 向url中追加参数
+     * @param {string} uri url地址
+     * @param {string} key 参数名称
+     * @param {*} value 参数值
+     * @returns {*}
+     */
+    public updateQueryStringParameter(uri: string, key: string, value: any): any {
+        if (!value) {
+            return uri;
+        }
+        let re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+        let separator = uri.indexOf('?') !== -1 ? "&" : "?";
+        if (uri.match(re)) {
+            return uri.replace(re, '$1' + key + "=" + value + '$2');
+        } else {
+            return uri + separator + key + "=" + value;
+        }
+    }
+    /**
      * @description 设置cookie
      * @param {*} key
      * @param {*} value
